@@ -6,7 +6,7 @@ namespace Donquixote\DID\ParamToCTV;
 
 use Donquixote\DID\ContainerToValue\ContainerToValue_ServiceId;
 use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
-use Donquixote\DID\Util\ReflectionTypeUtil;
+use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 
 class ParamToCTV_ParamTypeAsServiceId implements ParamToCTVInterface {
 

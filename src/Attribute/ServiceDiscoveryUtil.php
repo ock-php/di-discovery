@@ -7,7 +7,7 @@ namespace Donquixote\DID\Attribute;
 use Donquixote\DID\Exception\DiscoveryException;
 use Donquixote\DID\Exception\MalformedDeclarationException;
 use Donquixote\Helpers\Util\MessageUtil;
-use Donquixote\DID\Util\ReflectionTypeUtil;
+use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 
 class ServiceDiscoveryUtil {
 

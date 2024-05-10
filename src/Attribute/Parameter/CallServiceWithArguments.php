@@ -6,7 +6,7 @@ namespace Donquixote\DID\Attribute\Parameter;
 
 use Donquixote\DID\Exception\MalformedDeclarationException;
 use Donquixote\Helpers\Util\MessageUtil;
-use Donquixote\DID\Util\ReflectionTypeUtil;
+use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 
 /**
  * Treats the service as a callable.
