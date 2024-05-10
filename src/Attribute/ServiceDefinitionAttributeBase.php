@@ -7,7 +7,7 @@ use Donquixote\DID\Attribute\Parameter\ServiceArgumentAttributeInterface;
 use Donquixote\DID\Exception\DiscoveryException;
 use Donquixote\DID\ServiceDefinition\ServiceDefinition;
 use Donquixote\DID\Util\AttributesUtil;
-use Donquixote\CodegenTools\Util\MessageUtil;
+use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;

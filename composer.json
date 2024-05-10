@@ -6,6 +6,7 @@
         "php": ">=8.2",
         "donquixote/class-discovery": "@dev",
         "donquixote/codegen-tools": "@dev",
+        "donquixote/helpers": "@dev",
         "psr/container": "^2.0",
         "psr/log": "^1.1.4|^2.0|^3.0"
     },

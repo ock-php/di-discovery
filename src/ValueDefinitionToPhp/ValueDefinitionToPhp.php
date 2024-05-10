@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace Donquixote\DID\ValueDefinitionToPhp;
 
 use Donquixote\CodegenTools\Exception\CodegenException;
-use Donquixote\CodegenTools\Util\MessageUtil;
+use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\CodegenTools\Util\CodeGen;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
 use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
