@@ -8,7 +8,7 @@ use Donquixote\DID\Attribute\Parameter\CallServiceMethod;
 use Donquixote\DID\ContainerToValue\ContainerToValue_ObjectMethodCall;
 use Donquixote\DID\ContainerToValue\ContainerToValue_ServiceId;
 use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
-use Donquixote\DID\Util\AttributesUtil;
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 
 class ParamToCTV_Attribute_CallServiceMethod implements ParamToCTVInterface {
 

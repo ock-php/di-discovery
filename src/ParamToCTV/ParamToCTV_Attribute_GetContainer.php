@@ -7,7 +7,7 @@ namespace Donquixote\DID\ParamToCTV;
 use Donquixote\DID\Attribute\Parameter\GetContainer;
 use Donquixote\DID\ContainerToValue\ContainerToValue_Container;
 use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
-use Donquixote\DID\Util\AttributesUtil;
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 
 class ParamToCTV_Attribute_GetContainer implements ParamToCTVInterface {
 

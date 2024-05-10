@@ -17,7 +17,7 @@ use Donquixote\DID\ContainerToValue\ContainerToValue_ServiceId;
 use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
 use Donquixote\DID\Exception\DiscoveryException;
 use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
-use Donquixote\DID\Util\AttributesUtil;
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\Helpers\Util\MessageUtil;
 
 class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase implements CTVListInterface {

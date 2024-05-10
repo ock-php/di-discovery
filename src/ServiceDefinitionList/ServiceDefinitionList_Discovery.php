@@ -6,7 +6,7 @@ namespace Donquixote\DID\ServiceDefinitionList;
 
 use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
 use Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface;
-use Donquixote\DID\Util\AttributesUtil;
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 
 /**
  * @template-extends \Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface<false>
