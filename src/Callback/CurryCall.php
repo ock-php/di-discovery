@@ -50,7 +50,7 @@ class CurryCall {
     array $namedArgDefinitions,
     array $curryArgsMap = [],
     array $callableArgDefinitions = [],
-  ) {
+  ): ValueDefinitionInterface {
     return new ValueDefinition_Construct(self::class, [
       $callbackDefinition,
       $namedArgDefinitions,
