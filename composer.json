@@ -2,16 +2,6 @@
     "name": "donquixote/di-discovery",
     "description": "Dependency injection discovery (DID)",
     "license": "GPL-2.0-or-later",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../phplib/class-discovery"
-        },
-        {
-            "type": "path",
-            "url": "../../phplib/codegen-tools"
-        }
-    ],
     "require": {
         "php": ">=8.2",
         "donquixote/class-discovery": "@dev",
