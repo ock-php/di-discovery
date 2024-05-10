@@ -15,7 +15,7 @@ interface ServiceArgumentAttributeInterface {
    *
    * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface|mixed
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public function getArgumentDefinition(\ReflectionParameter $parameter): mixed;
 

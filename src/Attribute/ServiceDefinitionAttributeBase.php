@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Donquixote\DID\Attribute;
 
 use Donquixote\DID\Attribute\Parameter\ServiceArgumentAttributeInterface;
-use Donquixote\DID\Exception\DiscoveryException;
+use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\DID\ServiceDefinition\ServiceDefinition;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\Helpers\Util\MessageUtil;
@@ -116,7 +116,7 @@ abstract class ServiceDefinitionAttributeBase implements ServiceDefinitionAttrib
    *
    * @return array
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   protected function buildArgumentDefinitions(array $parameters): array {
     $args = [];

@@ -17,7 +17,7 @@ interface ParamToCTVInterface {
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface|null
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public function paramGetCTV(\ReflectionParameter $parameter): ?ContainerToValueInterface;
 

@@ -12,7 +12,7 @@ interface ReflectorAwareAttributeInterface {
    * @param \Reflector $reflector
    *   The place where the attribute was found.
    *
-   * @throws \Donquixote\DID\Exception\MalformedDeclarationException
+   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function setReflector(\Reflector $reflector): void;
 

@@ -15,7 +15,7 @@ interface GetServiceInterface extends ServiceArgumentAttributeInterface {
    *
    * @return string
    *
-   * @throws \Donquixote\DID\Exception\MalformedDeclarationException
+   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function paramGetServiceId(\ReflectionParameter $parameter): string;
 

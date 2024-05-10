@@ -13,7 +13,7 @@ interface ClassToCTVInterface {
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public function classGetCTV(\ReflectionClass $reflectionClass): ContainerToValueInterface;
 

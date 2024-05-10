@@ -28,7 +28,7 @@ class Container_ServiceCallbacks implements ContainerInterface {
    * @param \Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface $serviceDefinitionList
    *
    * @return static
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public static function fromServiceDefinitionList(ServiceDefinitionListInterface $serviceDefinitionList): self {
     $definitions = [];

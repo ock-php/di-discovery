@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Donquixote\DID\Attribute\Parameter;
 
-use Donquixote\DID\Exception\MalformedDeclarationException;
+use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
 use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
@@ -35,7 +35,7 @@ class GetService implements GetServiceInterface {
    *
    * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface
    *
-   * @throws \Donquixote\DID\Exception\MalformedDeclarationException
+   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function getArgumentDefinition(\ReflectionParameter $parameter): ValueDefinitionInterface {
     $id = $this->id

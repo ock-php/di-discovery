@@ -26,7 +26,7 @@ interface ServiceDefinitionAttributeInterface {
    *
    * @return \Donquixote\DID\ServiceDefinition\ServiceDefinition
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public function onClass(\ReflectionClass $reflectionClass): ServiceDefinition;
 
@@ -35,7 +35,7 @@ interface ServiceDefinitionAttributeInterface {
    *
    * @return \Donquixote\DID\ServiceDefinition\ServiceDefinition
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public function onMethod(\ReflectionMethod $reflectionMethod): ServiceDefinition;
 

@@ -14,7 +14,7 @@ class ParamToCTV_ParamTypeAsServiceId implements ParamToCTVInterface {
    * @param \ReflectionParameter $parameter
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface|null
-   * @throws \Donquixote\DID\Exception\MalformedDeclarationException
+   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function paramGetCTV(\ReflectionParameter $parameter): ?ContainerToValueInterface {
     $class = ReflectionTypeUtil::getClassLikeType($parameter);

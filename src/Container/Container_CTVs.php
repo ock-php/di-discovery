@@ -31,7 +31,7 @@ class Container_CTVs implements ContainerInterface {
    * @param \Donquixote\ClassDiscovery\ClassFilesIA\ClassFilesIAInterface[] $classFilesIAs
    *
    * @return \Psr\Container\ContainerInterface
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public static function fromClassFilesIAs(array $classFilesIAs): ContainerInterface {
     $containerDiscoveryClassFilesIA = ClassFilesIA::multiple($classFilesIAs);

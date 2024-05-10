@@ -15,7 +15,7 @@ use Donquixote\DID\ContainerToValue\ContainerToValue_CallableCall;
 use Donquixote\DID\ContainerToValue\ContainerToValue_Construct;
 use Donquixote\DID\ContainerToValue\ContainerToValue_ServiceId;
 use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
-use Donquixote\DID\Exception\DiscoveryException;
+use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\Helpers\Util\MessageUtil;
@@ -74,7 +74,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param bool $isCallableService
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function onClass(\ReflectionClass $reflectionClass, bool $isCallableService): ContainerToValueInterface {
     if (!$reflectionClass->isInstantiable()) {
@@ -106,7 +106,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param bool $isCallableService
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod, bool $isCallableService): ContainerToValueInterface {
     if (!$reflectionMethod->isStatic()) {
@@ -137,7 +137,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    *
    * @return list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface>
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildArgCTVs(array $parameters): array {
     $argCTVs = [];
@@ -161,7 +161,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    *
    * @return list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface|null>
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildCallableArgCTVs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgCTVs): array {
     $argCTVs = [];

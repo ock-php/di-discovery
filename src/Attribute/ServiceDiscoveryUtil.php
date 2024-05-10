@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\Attribute;
 
-use Donquixote\DID\Exception\DiscoveryException;
-use Donquixote\DID\Exception\MalformedDeclarationException;
+use Donquixote\ClassDiscovery\Exception\DiscoveryException;
+use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
 use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 
@@ -16,8 +16,8 @@ class ServiceDiscoveryUtil {
    *
    * @return string
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
-   * @throws \Donquixote\DID\Exception\MalformedDeclarationException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public static function reflectorGetTypeName(\Reflector $reflector): string {
     if ($reflector instanceof \ReflectionClass) {
@@ -42,8 +42,8 @@ class ServiceDiscoveryUtil {
    *
    * @return string
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
-   * @throws \Donquixote\DID\Exception\MalformedDeclarationException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public static function functionGetTypeName(\ReflectionFunctionAbstract $reflectionFunction): string {
     $returnClass = ReflectionTypeUtil::requireGetClassLikeType($reflectionFunction);
@@ -63,7 +63,7 @@ class ServiceDiscoveryUtil {
    * @param \ReflectionClass $reflectionClass
    *
    * @return string
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public static function classGetTypeName(\ReflectionClass $reflectionClass): string {
     $interfaces = $reflectionClass->getInterfaceNames();

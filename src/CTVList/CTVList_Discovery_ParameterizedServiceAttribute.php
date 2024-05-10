@@ -10,7 +10,7 @@ use Donquixote\DID\Attribute\ParametricService;
 use Donquixote\DID\Callback\CurryConstruct;
 use Donquixote\DID\ContainerToValue\ContainerToValue_CallableCall;
 use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
-use Donquixote\DID\Exception\DiscoveryException;
+use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\Helpers\Util\MessageUtil;
@@ -61,7 +61,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * @param \ReflectionClass $reflectionClass
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function onClass(\ReflectionClass $reflectionClass): ContainerToValueInterface {
     if (!$reflectionClass->isInstantiable()) {
@@ -91,7 +91,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * @param \ReflectionMethod $reflectionMethod
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod): ContainerToValueInterface {
     if (!$reflectionMethod->isStatic()) {
@@ -112,7 +112,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    *
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface[]
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildArgCTVs(array $parameters): array {
     $argCTVs = [];

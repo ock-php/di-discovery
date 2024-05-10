@@ -9,7 +9,7 @@ interface CTVListInterface {
   /**
    * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface[]
    *
-   * @throws \Donquixote\DID\Exception\DiscoveryException
+   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public function getCTVs(): array;
 
