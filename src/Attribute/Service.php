@@ -9,7 +9,7 @@ namespace Donquixote\DID\Attribute;
 #[\Attribute(\Attribute::TARGET_METHOD|\Attribute::TARGET_CLASS|\Attribute::IS_REPEATABLE)]
 final class Service extends ServiceDefinitionAttributeBase {
 
-  protected function isParametric(): bool {
+  public function isParametric(): bool {
     return false;
   }
 

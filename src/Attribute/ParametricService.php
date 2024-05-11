@@ -34,7 +34,7 @@ final class ParametricService extends ServiceDefinitionAttributeBase {
   /**
    * {@inheritdoc}
    */
-  protected function isParametric(): bool {
+  public function isParametric(): bool {
     return false;
   }
 

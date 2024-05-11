@@ -66,6 +66,9 @@ class ServiceDiscoveryUtil {
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   public static function classGetTypeName(\ReflectionClass $reflectionClass): string {
+    if ($reflectionClass->isInterface()) {
+      return $reflectionClass->getName();
+    }
     $interfaces = $reflectionClass->getInterfaceNames();
     if (!$interfaces) {
       return $reflectionClass->getName();
