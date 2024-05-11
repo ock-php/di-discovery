@@ -43,7 +43,6 @@ class ValueDefinitionToPhp implements ValueDefinitionToPhpInterface {
    * {@inheritdoc}
    */
   public function generate(mixed $definition, bool $enclose = FALSE): string {
-    /** @noinspection PhpVoidFunctionResultUsedInspection */
     return match (gettype($definition)) {
       'array' => CodeGen::phpArray(
         $this->generateMultiple($definition),
