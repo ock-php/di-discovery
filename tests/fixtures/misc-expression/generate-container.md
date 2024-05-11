@@ -3,13 +3,11 @@
 Executed PHP:
 
 ```php
-use Donquixote\CodegenTools\Util\CodeFormatUtil;use Donquixote\DID\Exception\ServiceNotFoundException;
-use Donquixote\DID\ServiceDefinitionList\ServiceDefinitionList_Discovery;
+use Donquixote\CodegenTools\Util\CodeFormatUtil;
+use Donquixote\DID\Exception\ServiceNotFoundException;
 use Donquixote\DID\Tests\Fixtures\Services\EntryPoints;
-use Donquixote\CodegenTools\Util\CodeGen;
 use PHPUnit\Framework\Assert;
 use Psr\Container\ContainerInterface;
-use Psr\Container\NotFoundExceptionInterface;
 
 $generator = new \Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp('$this');
 
