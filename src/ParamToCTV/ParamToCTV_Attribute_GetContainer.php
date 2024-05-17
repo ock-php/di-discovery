@@ -5,8 +5,8 @@ declare(strict_types = 1);
 namespace Donquixote\DID\ParamToCTV;
 
 use Donquixote\DID\Attribute\Parameter\GetContainer;
-use Donquixote\DID\ContainerToValue\ContainerToValue_Container;
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\Egg_Container;
+use Ock\Egg\Egg\EggInterface;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
 
 class ParamToCTV_Attribute_GetContainer implements ParamToCTVInterface {
@@ -14,9 +14,9 @@ class ParamToCTV_Attribute_GetContainer implements ParamToCTVInterface {
   /**
    * {@inheritdoc}
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ?ContainerToValueInterface {
+  public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface {
     return AttributesUtil::hasSingle($parameter, GetContainer::class)
-      ? new ContainerToValue_Container()
+      ? new Egg_Container()
       : NULL;
   }
 

@@ -8,8 +8,8 @@ use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
 use Donquixote\DID\Attribute\Parameter\GetArgument;
 use Donquixote\DID\Attribute\ParametricService;
 use Donquixote\DID\Callback\CurryConstruct;
-use Donquixote\DID\ContainerToValue\ContainerToValue_CallableCall;
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\Egg_CallableCall;
+use Ock\Egg\Egg\EggInterface;
 use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
@@ -60,10 +60,10 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
   /**
    * @param \ReflectionClass $reflectionClass
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
+   * @return \Ock\Egg\Egg\EggInterface
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function onClass(\ReflectionClass $reflectionClass): ContainerToValueInterface {
+  private function onClass(\ReflectionClass $reflectionClass): EggInterface {
     if (!$reflectionClass->isInstantiable()) {
       throw new DiscoveryException(sprintf(
         'Class %s is not instantiable.',
@@ -90,10 +90,10 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * @param \ReflectionClass $reflectionClass
    * @param \ReflectionMethod $reflectionMethod
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
+   * @return \Ock\Egg\Egg\EggInterface
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod): ContainerToValueInterface {
+  private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod): EggInterface {
     if (!$reflectionMethod->isStatic()) {
       throw new DiscoveryException(sprintf(
         'Method %s is not static.',
@@ -101,7 +101,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
       ));
     }
     $argCTVs = $this->buildArgCTVs($reflectionMethod->getParameters());
-    return ContainerToValue_CallableCall::createFixed(
+    return Egg_CallableCall::createFixed(
       [$reflectionClass->getName(), $reflectionMethod->getName()],
       $argCTVs,
     );
@@ -110,7 +110,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
   /**
    * @param \ReflectionParameter[] $parameters
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface[]
+   * @return \Ock\Egg\Egg\EggInterface[]
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\ParamToCTV;
 
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\EggInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
 #[AutoconfigureTag(self::SERVICE_TAG)]
@@ -15,10 +15,10 @@ interface ParamToCTVInterface {
   /**
    * @param \ReflectionParameter $parameter
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface|null
+   * @return \Ock\Egg\Egg\EggInterface|null
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ?ContainerToValueInterface;
+  public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface;
 
 }

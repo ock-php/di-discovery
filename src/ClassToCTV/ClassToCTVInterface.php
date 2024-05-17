@@ -4,17 +4,17 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\ClassToCTV;
 
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\EggInterface;
 
 interface ClassToCTVInterface {
 
   /**
    * @param \ReflectionClass $reflectionClass
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
+   * @return \Ock\Egg\Egg\EggInterface
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  public function classGetCTV(\ReflectionClass $reflectionClass): ContainerToValueInterface;
+  public function classGetCTV(\ReflectionClass $reflectionClass): EggInterface;
 
 }

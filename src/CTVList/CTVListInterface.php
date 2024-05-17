@@ -7,7 +7,7 @@ namespace Donquixote\DID\CTVList;
 interface CTVListInterface {
 
   /**
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface[]
+   * @return \Ock\Egg\Egg\EggInterface[]
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */

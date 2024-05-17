@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\Callback;
 
-use Donquixote\DID\ContainerToValue\ContainerToValue_Construct;
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\Egg_Construct;
+use Ock\Egg\Egg\EggInterface;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
 use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
 
@@ -64,20 +64,20 @@ class CurryCall {
    *
    * @template T as mixed
    *
-   * @param \Donquixote\DID\ContainerToValue\ContainerToValueInterface<T>|(callable(): T) $callbackCTV
-   * @param list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface|mixed> $namedArgCTVs
+   * @param \Ock\Egg\Egg\EggInterface<T>|(callable(): T) $callbackCTV
+   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
    * @param array<string, int> $curryArgsMap
-   * @param array<string, ContainerToValueInterface> $callableArgCTVs
+   * @param array<string, EggInterface> $callableArgCTVs
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface<self<T>>
+   * @return \Ock\Egg\Egg\EggInterface<self<T>>
    */
   public static function ctv(
-    ContainerToValueInterface|callable $callbackCTV,
+    EggInterface|callable $callbackCTV,
     array $namedArgCTVs,
     array $curryArgsMap = [],
     array $callableArgCTVs = [],
-  ): ContainerToValueInterface {
-    return new ContainerToValue_Construct(self::class, [
+  ): EggInterface {
+    return new Egg_Construct(self::class, [
       $callbackCTV,
       $namedArgCTVs,
       $curryArgsMap,
@@ -86,22 +86,22 @@ class CurryCall {
   }
 
   /**
-   * @param class-string|\Donquixote\DID\ContainerToValue\ContainerToValueInterface $classOrObjectCTV
+   * @param class-string|\Ock\Egg\Egg\EggInterface $classOrObjectCTV
    * @param string $method
-   * @param list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface|mixed> $namedArgCTVs
+   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
    * @param array<string, int> $curryArgsMap
-   * @param array<string, ContainerToValueInterface> $callableArgCTVs
+   * @param array<string, EggInterface> $callableArgCTVs
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface<self>
+   * @return \Ock\Egg\Egg\EggInterface<self>
    */
   public static function ctvMethodCall(
-    string|ContainerToValueInterface $classOrObjectCTV,
+    string|EggInterface $classOrObjectCTV,
     string $method,
     array $namedArgCTVs,
     array $curryArgsMap = [],
     array $callableArgCTVs = [],
-  ): ContainerToValueInterface {
-    return new ContainerToValue_Construct(self::class, [
+  ): EggInterface {
+    return new Egg_Construct(self::class, [
       [$classOrObjectCTV, $method],
       $namedArgCTVs,
       $curryArgsMap,

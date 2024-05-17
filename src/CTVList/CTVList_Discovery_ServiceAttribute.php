@@ -11,10 +11,10 @@ use Donquixote\DID\Attribute\Parameter\GetArgument;
 use Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface;
 use Donquixote\DID\Callback\CurryCall;
 use Donquixote\DID\Callback\CurryConstruct;
-use Donquixote\DID\ContainerToValue\ContainerToValue_CallableCall;
-use Donquixote\DID\ContainerToValue\ContainerToValue_Construct;
-use Donquixote\DID\ContainerToValue\ContainerToValue_ServiceId;
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\Egg_CallableCall;
+use Ock\Egg\Egg\Egg_Construct;
+use Ock\Egg\Egg\Egg_ServiceId;
+use Ock\Egg\Egg\EggInterface;
 use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
@@ -73,10 +73,10 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param \ReflectionClass $reflectionClass
    * @param bool $isCallableService
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
+   * @return \Ock\Egg\Egg\EggInterface
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function onClass(\ReflectionClass $reflectionClass, bool $isCallableService): ContainerToValueInterface {
+  private function onClass(\ReflectionClass $reflectionClass, bool $isCallableService): EggInterface {
     if (!$reflectionClass->isInstantiable()) {
       throw new DiscoveryException(sprintf(
         'Class %s is not instantiable.',
@@ -86,7 +86,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     $parameters = $reflectionClass->getConstructor()?->getParameters() ?? [];
     if (!$isCallableService) {
       $argCTVs = $this->buildArgCTVs($parameters);
-      return new ContainerToValue_Construct(
+      return new Egg_Construct(
         $reflectionClass->getName(),
         $argCTVs,
       );
@@ -105,10 +105,10 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param \ReflectionMethod $reflectionMethod
    * @param bool $isCallableService
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
+   * @return \Ock\Egg\Egg\EggInterface
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod, bool $isCallableService): ContainerToValueInterface {
+  private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod, bool $isCallableService): EggInterface {
     if (!$reflectionMethod->isStatic()) {
       throw new DiscoveryException(sprintf(
         'Method %s is not static.',
@@ -118,7 +118,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     $parameters = $reflectionClass->getConstructor()?->getParameters();
     if (!$isCallableService) {
       $argCTVs = $this->buildArgCTVs($reflectionMethod->getParameters());
-      return ContainerToValue_CallableCall::createFixed(
+      return Egg_CallableCall::createFixed(
         [$reflectionClass->getName(), $reflectionMethod->getName()],
         $argCTVs,
       );
@@ -135,7 +135,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
   /**
    * @param \ReflectionParameter[] $parameters
    *
-   * @return list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface>
+   * @return list<\Ock\Egg\Egg\EggInterface>
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
@@ -159,7 +159,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param array|null $curryArgsMap
    * @param array|null $callableArgCTVs
    *
-   * @return list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface|null>
+   * @return list<\Ock\Egg\Egg\EggInterface|null>
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
@@ -176,7 +176,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
       }
       elseif ($attribute = AttributesUtil::getSingle($parameter, CallServiceMethodWithArguments::class)) {
         $callableArgCTVs[$attribute->getName()] = CurryCall::ctvMethodCall(
-          new ContainerToValue_ServiceId($attribute->serviceId),
+          new Egg_ServiceId($attribute->serviceId),
           $attribute->method,
           [],
           $attribute->forwardArgsMap,
@@ -184,7 +184,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
       }
       elseif ($attribute = AttributesUtil::getSingle($parameter, CallServiceWithArguments::class)) {
         $callableArgCTVs[$attribute->getName()] = CurryCall::ctv(
-          new ContainerToValue_ServiceId($attribute->paramGetServiceId($parameter)),
+          new Egg_ServiceId($attribute->paramGetServiceId($parameter)),
           $attribute->method,
           [],
           $attribute->forwardArgsMap,

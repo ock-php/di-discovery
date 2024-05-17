@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\ParamToCTV;
 
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\EggInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 
@@ -24,7 +24,7 @@ class ParamToCTV_Chain implements ParamToCTVInterface {
   /**
    * {@inheritdoc}
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ?ContainerToValueInterface {
+  public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface {
     foreach ($this->p2CTVs as $paramToCTV) {
       $ctv = $paramToCTV->paramGetCTV($parameter);
       if ($ctv !== NULL) {

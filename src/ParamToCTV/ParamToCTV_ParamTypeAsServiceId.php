@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\ParamToCTV;
 
-use Donquixote\DID\ContainerToValue\ContainerToValue_ServiceId;
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\Egg_ServiceId;
+use Ock\Egg\Egg\EggInterface;
 use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 
 class ParamToCTV_ParamTypeAsServiceId implements ParamToCTVInterface {
@@ -13,15 +13,15 @@ class ParamToCTV_ParamTypeAsServiceId implements ParamToCTVInterface {
   /**
    * @param \ReflectionParameter $parameter
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface|null
+   * @return \Ock\Egg\Egg\EggInterface|null
    * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ?ContainerToValueInterface {
+  public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface {
     $class = ReflectionTypeUtil::getClassLikeType($parameter);
     if ($class === NULL) {
       return NULL;
     }
-    return new ContainerToValue_ServiceId($class);
+    return new Egg_ServiceId($class);
   }
 
 }

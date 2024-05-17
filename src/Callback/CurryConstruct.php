@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\Callback;
 
-use Donquixote\DID\ContainerToValue\ContainerToValue_Construct;
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\Egg_Construct;
+use Ock\Egg\Egg\EggInterface;
 
 /**
  * @template T as object
@@ -33,19 +33,19 @@ class CurryConstruct {
    * @template T as object
    *
    * @param class-string<T> $class
-   * @param list<\Donquixote\DID\ContainerToValue\ContainerToValueInterface|mixed> $namedArgCTVs
+   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
    * @param list<string> $curryArgNames
    * @param array $callableArgCTVs
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface<self<T>>
+   * @return \Ock\Egg\Egg\EggInterface<self<T>>
    */
   public static function ctv(
     string $class,
     array $namedArgCTVs,
     array $curryArgNames = [],
     array $callableArgCTVs = [],
-  ): ContainerToValueInterface {
-    return new ContainerToValue_Construct(self::class, [
+  ): EggInterface {
+    return new Egg_Construct(self::class, [
       $class,
       $namedArgCTVs,
       $curryArgNames,

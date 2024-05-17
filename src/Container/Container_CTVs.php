@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace Donquixote\DID\Container;
 
 use Donquixote\ClassDiscovery\ClassFilesIA\ClassFilesIA;
-use Donquixote\DID\ContainerToValue\ContainerToValue_Container;
+use Ock\Egg\Egg\Egg_Container;
 use Donquixote\DID\CTVList\CTVList_Discovery_ServiceAttribute;
 use Donquixote\DID\Exception\ContainerToValueException;
 use Donquixote\DID\ParamToCTV\ParamToCTV;
@@ -21,7 +21,7 @@ class Container_CTVs implements ContainerInterface {
   /**
    * Constructor.
    *
-   * @param \Donquixote\DID\ContainerToValue\ContainerToValueInterface[] $ctvs
+   * @param \Ock\Egg\Egg\EggInterface[] $ctvs
    */
   public function __construct(
     private readonly array $ctvs,
@@ -41,7 +41,7 @@ class Container_CTVs implements ContainerInterface {
     $ctvs = $emptyCtvList
       ->withClassFilesIA($containerDiscoveryClassFilesIA)
       ->getCTVs();
-    $ctvs[ContainerInterface::class] = new ContainerToValue_Container();
+    $ctvs[ContainerInterface::class] = new Egg_Container();
     return new Container_CTVs($ctvs);
   }
 

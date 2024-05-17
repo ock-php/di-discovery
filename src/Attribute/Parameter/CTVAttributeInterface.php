@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Donquixote\DID\Attribute\Parameter;
 
-use Donquixote\DID\ContainerToValue\ContainerToValueInterface;
+use Ock\Egg\Egg\EggInterface;
 
 interface CTVAttributeInterface extends ServiceArgumentAttributeInterface {
 
   /**
    * @param \ReflectionParameter $parameter
    *
-   * @return \Donquixote\DID\ContainerToValue\ContainerToValueInterface
+   * @return \Ock\Egg\Egg\EggInterface
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ContainerToValueInterface;
+  public function paramGetCTV(\ReflectionParameter $parameter): EggInterface;
 
 }
