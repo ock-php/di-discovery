@@ -91,7 +91,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         $argEggs,
       );
     }
-    $argEggs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgEggs);
+    $argEggs = $this->buildCallableArgEggs($parameters, $curryArgNames, $callableArgEggs);
     return CurryConstruct::egg(
       $reflectionClass->getName(),
       $argEggs,
@@ -123,7 +123,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         $argEggs,
       );
     }
-    $argEggs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgEggs);
+    $argEggs = $this->buildCallableArgEggs($parameters, $curryArgNames, $callableArgEggs);
     return CurryCall::egg(
       [$reflectionClass->getName(), $reflectionMethod->getName()],
       $argEggs,
@@ -163,7 +163,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function buildCallableArgCTVs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgEggs): array {
+  private function buildCallableArgEggs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgEggs): array {
     $argEggs = [];
     foreach ($parameters as $parameter) {
       $egg = $this->paramToEgg->paramGetEgg($parameter);
