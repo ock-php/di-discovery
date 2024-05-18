@@ -8,7 +8,7 @@ use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\EggInterface;
 
 /**
- * @template T as object
+ * @template T of object
  */
 class CurryConstruct {
 
@@ -58,7 +58,7 @@ class CurryConstruct {
    *
    * @param mixed ...$args
    *
-   * @return T
+   * @return T&object
    */
   public function __invoke(mixed ...$args): object {
     $constructorArgs = $this->args;
