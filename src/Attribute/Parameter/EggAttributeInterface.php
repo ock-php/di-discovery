@@ -6,13 +6,13 @@ namespace Donquixote\DID\Attribute\Parameter;
 
 use Ock\Egg\Egg\EggInterface;
 
-interface CTVAttributeInterface extends ServiceArgumentAttributeInterface {
+interface EggAttributeInterface extends ServiceArgumentAttributeInterface {
 
   /**
    * @param \ReflectionParameter $parameter
    *
    * @return \Ock\Egg\Egg\EggInterface
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): EggInterface;
+  public function paramGetEgg(\ReflectionParameter $parameter): EggInterface;
 
 }
