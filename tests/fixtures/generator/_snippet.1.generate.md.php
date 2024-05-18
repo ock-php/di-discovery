@@ -9,7 +9,6 @@ declare(strict_types = 1);
 
 use Donquixote\CodegenTools\Util\CodeFormatUtil;
 use Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp;
-use Donquixote\CodegenTools\Util\CodeGen;
 
 $definition = eval($php);
 $expression = (new ValueDefinitionToPhp())->generate($definition);

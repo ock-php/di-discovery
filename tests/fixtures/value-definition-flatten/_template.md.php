@@ -10,9 +10,8 @@ declare(strict_types = 1);
  */
 
 use Donquixote\CodegenTools\Util\CodeFormatUtil;
-use Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp;
-use Donquixote\CodegenTools\Util\CodeGen;
 use Donquixote\DID\ValueDefinitionProcessor\ValueDefinitionProcessor_FlatServiceDefinition;
+use Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp;
 
 $definition = eval($php);
 $generator = new ValueDefinitionToPhp();

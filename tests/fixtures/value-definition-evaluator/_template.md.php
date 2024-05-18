@@ -11,9 +11,7 @@
 
 declare(strict_types = 1);
 
-use Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp;
 use Donquixote\DID\Tests\Util\TestUtil;
-use Donquixote\CodegenTools\Util\CodeGen;
 
 $definition = eval($php);
 $evaluator = TestUtil::createDummyEvaluator();
