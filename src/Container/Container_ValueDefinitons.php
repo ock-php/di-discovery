@@ -153,7 +153,7 @@ class Container_ValueDefinitons implements ContainerInterface {
    * {@inheritdoc}
    */
   public function has(string $id): bool {
-    return isset($this->ctvs[$id]);
+    return isset($this->definitions[$id]);
   }
 
 }
