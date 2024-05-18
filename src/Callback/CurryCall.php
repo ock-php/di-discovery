@@ -60,7 +60,7 @@ class CurryCall {
   }
 
   /**
-   * Creates the CTV object.
+   * Creates an egg for this class.
    *
    * @template T as mixed
    *
