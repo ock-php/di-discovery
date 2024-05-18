@@ -30,14 +30,14 @@ class CurryConstruct {
   /**
    * Creates an egg for this class.
    *
-   * @template T as object
+   * @template TT as object
    *
-   * @param class-string<T> $class
+   * @param class-string<TT> $class
    * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgEggs
    * @param list<string> $curryArgNames
    * @param array $callableArgEggs
    *
-   * @return \Ock\Egg\Egg\EggInterface<self<T>>
+   * @return \Ock\Egg\Egg\EggInterface<self<TT>>
    */
   public static function egg(
     string $class,
