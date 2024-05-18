@@ -17,7 +17,7 @@ use Donquixote\DID\ServiceDefinition\ServiceDefinition;
  * the return value of that callback will be an instance of the class, or a
  * return value of the method that was marked.
  *
- * @see \Donquixote\DID\CTVList\CTVList_Discovery_ParameterizedServiceAttribute
+ * @see \Donquixote\DID\EggList\EggList_Discovery_ParameterizedServiceAttribute
  */
 interface ServiceDefinitionAttributeInterface {
 

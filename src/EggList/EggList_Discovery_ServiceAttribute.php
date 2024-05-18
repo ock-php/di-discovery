@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\CTVList;
+namespace Donquixote\DID\EggList;
 
 use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
@@ -20,7 +20,7 @@ use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;
 use Ock\Egg\ParamToEgg\ParamToEggInterface;
 
-class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase implements CTVListInterface {
+class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase implements EggListInterface {
 
   /**
    * Constructor.

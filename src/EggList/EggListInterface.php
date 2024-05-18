@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\CTVList;
+namespace Donquixote\DID\EggList;
 
-interface CTVListInterface {
+interface EggListInterface {
 
   /**
    * @return \Ock\Egg\Egg\EggInterface[]
