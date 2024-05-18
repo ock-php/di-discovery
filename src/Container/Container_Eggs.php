@@ -35,10 +35,10 @@ class Container_Eggs implements ContainerInterface {
    */
   public static function fromClassFilesIAs(array $classFilesIAs): ContainerInterface {
     $containerDiscoveryClassFilesIA = ClassFilesIA::multiple($classFilesIAs);
-    $emptyCtvList = new EggList_Discovery_ServiceAttribute(
+    $emptyEggList = new EggList_Discovery_ServiceAttribute(
       ParamToEgg::create(),
     );
-    $eggs = $emptyCtvList
+    $eggs = $emptyEggList
       ->withClassFilesIA($containerDiscoveryClassFilesIA)
       ->getEggs();
     $eggs[ContainerInterface::class] = new Egg_Container();
