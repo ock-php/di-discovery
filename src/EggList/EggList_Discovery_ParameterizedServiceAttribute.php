@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Donquixote\DID\EggList;
 
 use Donquixote\ClassDiscovery\Exception\DiscoveryException;
+use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
 use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\DID\Attribute\Parameter\GetArgument;
@@ -65,9 +66,10 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    */
   private function onClass(\ReflectionClass $reflectionClass): EggInterface {
     if (!$reflectionClass->isInstantiable()) {
-      throw new DiscoveryException(sprintf(
-        'Class %s is not instantiable.',
+      throw new MalformedDeclarationException(sprintf(
+        'Class %s is not instantiable. Attribute %s is not allowed.',
         $reflectionClass->getName(),
+        ParametricService::class,
       ));
     }
     $argEggs = [];
@@ -95,9 +97,10 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    */
   private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod): EggInterface {
     if (!$reflectionMethod->isStatic()) {
-      throw new DiscoveryException(sprintf(
-        'Method %s is not static.',
+      throw new MalformedDeclarationException(sprintf(
+        'Method %s is not static. Attribute %s is not allowed.',
         MessageUtil::formatReflector($reflectionMethod),
+        ParametricService::class,
       ));
     }
     $argEggs = $this->buildArgEggs($reflectionMethod->getParameters());
