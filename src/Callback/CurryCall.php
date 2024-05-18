@@ -62,14 +62,14 @@ class CurryCall {
   /**
    * Creates an egg for this class.
    *
-   * @template T as mixed
+   * @template TT as mixed
    *
-   * @param \Ock\Egg\Egg\EggInterface<T>|(callable(): T) $callbackOrEgg
+   * @param \Ock\Egg\Egg\EggInterface<TT>|(callable(): TT) $callbackOrEgg
    * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgEggs
    * @param array<string, int> $curryArgsMap
    * @param array<string, EggInterface> $callableArgEggs
    *
-   * @return \Ock\Egg\Egg\EggInterface<self<T>>
+   * @return \Ock\Egg\Egg\EggInterface<self<TT>>
    */
   public static function egg(
     EggInterface|callable $callbackOrEgg,
