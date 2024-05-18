@@ -7,7 +7,6 @@ namespace Donquixote\DID\Container;
 use Donquixote\DID\Evaluator\Evaluator_Empty;
 use Donquixote\DID\Evaluator\EvaluatorInterface;
 use Donquixote\DID\Exception\ContainerToValueException;
-use Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
 use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;

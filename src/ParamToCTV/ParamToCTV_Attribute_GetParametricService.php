@@ -4,11 +4,11 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\ParamToCTV;
 
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\DID\Attribute\Parameter\GetParametricService;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
 
 class ParamToCTV_Attribute_GetParametricService implements ParamToCTVInterface {
 

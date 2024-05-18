@@ -5,8 +5,8 @@ declare(strict_types = 1);
 namespace Donquixote\DID\Tests;
 
 use Donquixote\CodegenTools\Util\CodeFormatUtil;
-use Donquixote\DID\Tests\Util\TestUtil;
 use Donquixote\CodegenTools\Util\CodeGen;
+use Donquixote\DID\Tests\Util\TestUtil;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\TestCase;

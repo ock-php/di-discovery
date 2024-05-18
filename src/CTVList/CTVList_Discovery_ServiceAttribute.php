@@ -4,21 +4,21 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\CTVList;
 
+use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\DID\Attribute\Parameter\CallServiceMethodWithArguments;
 use Donquixote\DID\Attribute\Parameter\CallServiceWithArguments;
 use Donquixote\DID\Attribute\Parameter\GetArgument;
 use Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface;
 use Donquixote\DID\Callback\CurryCall;
 use Donquixote\DID\Callback\CurryConstruct;
+use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
+use Donquixote\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;
-use Donquixote\ClassDiscovery\Exception\DiscoveryException;
-use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
-use Donquixote\Helpers\Util\MessageUtil;
 
 class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase implements CTVListInterface {
 

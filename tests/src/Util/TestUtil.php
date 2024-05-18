@@ -6,10 +6,8 @@ namespace Donquixote\DID\Tests\Util;
 
 use Donquixote\DID\Evaluator\Evaluator;
 use Donquixote\DID\Evaluator\EvaluatorInterface;
-use Donquixote\DID\Tests\Fixtures\GenericObject;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
-use Psr\Container\ContainerInterface;
 
 class TestUtil {
 

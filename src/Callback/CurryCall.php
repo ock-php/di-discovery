@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\Callback;
 
-use Ock\Egg\Egg\Egg_Construct;
-use Ock\Egg\Egg\EggInterface;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
 use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\Egg\Egg\Egg_Construct;
+use Ock\Egg\Egg\EggInterface;
 
 /**
  * @template T as mixed

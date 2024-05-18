@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace Donquixote\DID\ValueDefinitionToPhp;
 
 use Donquixote\CodegenTools\Exception\CodegenException;
-use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\CodegenTools\Util\CodeGen;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
 use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
@@ -16,6 +15,7 @@ use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
 use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;
 use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Donquixote\Helpers\Util\MessageUtil;
 
 class ValueDefinitionToPhp implements ValueDefinitionToPhpInterface {
 

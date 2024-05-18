@@ -6,8 +6,8 @@ namespace Donquixote\DID\Attribute;
 
 use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
+use Donquixote\Helpers\Util\MessageUtil;
 
 class ServiceDiscoveryUtil {
 

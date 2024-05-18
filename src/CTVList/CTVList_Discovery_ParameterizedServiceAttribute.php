@@ -4,16 +4,16 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\CTVList;
 
+use Donquixote\ClassDiscovery\Exception\DiscoveryException;
 use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
+use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\DID\Attribute\Parameter\GetArgument;
 use Donquixote\DID\Attribute\ParametricService;
 use Donquixote\DID\Callback\CurryConstruct;
+use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
+use Donquixote\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\EggInterface;
-use Donquixote\ClassDiscovery\Exception\DiscoveryException;
-use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
-use Donquixote\Helpers\Util\MessageUtil;
 
 class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesIAHavingBase implements CTVListInterface {
 

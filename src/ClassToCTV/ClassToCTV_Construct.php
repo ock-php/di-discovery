@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace Donquixote\DID\ClassToCTV;
 
+use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\EggInterface;
-use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 
 #[AsAlias]

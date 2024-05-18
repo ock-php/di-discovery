@@ -5,10 +5,10 @@ declare(strict_types = 1);
 namespace Donquixote\DID\Attribute\Parameter;
 
 use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
 use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
 use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
+use Donquixote\Helpers\Util\MessageUtil;
 
 /**
  * Treats the service as a callable.

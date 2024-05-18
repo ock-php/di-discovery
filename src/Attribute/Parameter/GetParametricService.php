@@ -6,8 +6,8 @@ namespace Donquixote\DID\Attribute\Parameter;
 
 use Donquixote\ClassDiscovery\Attribute\ReflectorAwareAttributeInterface;
 use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\Helpers\Util\MessageUtil;
 use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
+use Donquixote\Helpers\Util\MessageUtil;
 
 /**
  * Treats the service as a callable.

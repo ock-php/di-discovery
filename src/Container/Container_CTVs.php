@@ -5,10 +5,10 @@ declare(strict_types = 1);
 namespace Donquixote\DID\Container;
 
 use Donquixote\ClassDiscovery\ClassFilesIA\ClassFilesIA;
-use Ock\Egg\Egg\Egg_Container;
 use Donquixote\DID\CTVList\CTVList_Discovery_ServiceAttribute;
 use Donquixote\DID\Exception\ContainerToValueException;
 use Donquixote\DID\ParamToCTV\ParamToCTV;
+use Ock\Egg\Egg\Egg_Container;
 use Psr\Container\ContainerInterface;
 
 class Container_CTVs implements ContainerInterface {
