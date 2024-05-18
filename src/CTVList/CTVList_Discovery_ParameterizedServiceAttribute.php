@@ -10,20 +10,20 @@ use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\DID\Attribute\Parameter\GetArgument;
 use Donquixote\DID\Attribute\ParametricService;
 use Donquixote\DID\Callback\CurryConstruct;
-use Donquixote\DID\ParamToCTV\ParamToCTVInterface;
 use Donquixote\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\EggInterface;
+use Ock\Egg\ParamToEgg\ParamToEggInterface;
 
 class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesIAHavingBase implements CTVListInterface {
 
   /**
    * Constructor.
    *
-   * @param \Donquixote\DID\ParamToCTV\ParamToCTVInterface $paramToCTV
+   * @param \Ock\Egg\ParamToEgg\ParamToEggInterface $paramToCTV
    */
   public function __construct(
-    private readonly ParamToCTVInterface $paramToCTV,
+    private readonly ParamToEggInterface $paramToCTV,
   ) {}
 
   /**

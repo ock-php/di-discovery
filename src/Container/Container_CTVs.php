@@ -7,8 +7,8 @@ namespace Donquixote\DID\Container;
 use Donquixote\ClassDiscovery\ClassFilesIA\ClassFilesIA;
 use Donquixote\DID\CTVList\CTVList_Discovery_ServiceAttribute;
 use Donquixote\DID\Exception\ContainerToValueException;
-use Donquixote\DID\ParamToCTV\ParamToCTV;
 use Ock\Egg\Egg\Egg_Container;
+use Donquixote\DID\ParamToEgg\ParamToEgg;
 use Psr\Container\ContainerInterface;
 
 class Container_CTVs implements ContainerInterface {
@@ -36,7 +36,7 @@ class Container_CTVs implements ContainerInterface {
   public static function fromClassFilesIAs(array $classFilesIAs): ContainerInterface {
     $containerDiscoveryClassFilesIA = ClassFilesIA::multiple($classFilesIAs);
     $emptyCtvList = new CTVList_Discovery_ServiceAttribute(
-      ParamToCTV::create(),
+      ParamToEgg::create(),
     );
     $eggs = $emptyCtvList
       ->withClassFilesIA($containerDiscoveryClassFilesIA)

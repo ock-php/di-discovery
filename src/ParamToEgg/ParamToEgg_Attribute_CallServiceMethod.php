@@ -2,15 +2,16 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ParamToCTV;
+namespace Donquixote\DID\ParamToEgg;
 
 use Donquixote\ClassDiscovery\Util\AttributesUtil;
 use Donquixote\DID\Attribute\Parameter\CallServiceMethod;
 use Ock\Egg\Egg\Egg_ObjectMethodCall;
 use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;
+use Ock\Egg\ParamToEgg\ParamToEggInterface;
 
-class ParamToCTV_Attribute_CallServiceMethod implements ParamToCTVInterface {
+class ParamToEgg_Attribute_CallServiceMethod implements ParamToEggInterface {
 
   /**
    * {@inheritdoc}
