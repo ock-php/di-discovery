@@ -35,7 +35,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * {@inheritdoc}
    */
   public function getCTVs(): array {
-    $ctvs = [];
+    $eggs = [];
     /** @var \ReflectionClass $reflectionClass */
     foreach ($this->itReflectionClasses() as $reflectionClass) {
       /** @var \Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface[] $serviceAttributes */
@@ -43,11 +43,11 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
       if ($serviceAttributes) {
         foreach ($serviceAttributes as $serviceAttribute) {
           $serviceId = $serviceAttribute->reflectorGetServiceId($reflectionClass);
-          $ctv = $this->onClass(
+          $egg = $this->onClass(
             $reflectionClass,
             $serviceAttribute->isParametricService(),
           );
-          $ctvs[$serviceId] = $ctv;
+          $eggs[$serviceId] = $egg;
         }
       }
       foreach ($reflectionClass->getMethods() as $reflectionMethod) {
@@ -56,17 +56,17 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         if ($serviceAttributes) {
           foreach ($serviceAttributes as $serviceAttribute) {
             $serviceId = $serviceAttribute->reflectorGetServiceId($reflectionMethod);
-            $ctv = $this->onMethod(
+            $egg = $this->onMethod(
               $reflectionClass,
               $reflectionMethod,
               $serviceAttribute->isParametricService(),
             );
-            $ctvs[$serviceId] = $ctv;
+            $eggs[$serviceId] = $egg;
           }
         }
       }
     }
-    return $ctvs;
+    return $eggs;
   }
 
   /**
@@ -85,18 +85,18 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     }
     $parameters = $reflectionClass->getConstructor()?->getParameters() ?? [];
     if (!$isCallableService) {
-      $argCTVs = $this->buildArgCTVs($parameters);
+      $argEggs = $this->buildArgCTVs($parameters);
       return new Egg_Construct(
         $reflectionClass->getName(),
-        $argCTVs,
+        $argEggs,
       );
     }
-    $argCTVs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgCTVs);
+    $argEggs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgEggs);
     return CurryConstruct::ctv(
       $reflectionClass->getName(),
-      $argCTVs,
+      $argEggs,
       $curryArgNames,
-      $callableArgCTVs,
+      $callableArgEggs,
     );
   }
 
@@ -117,18 +117,18 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     }
     $parameters = $reflectionClass->getConstructor()?->getParameters();
     if (!$isCallableService) {
-      $argCTVs = $this->buildArgCTVs($reflectionMethod->getParameters());
+      $argEggs = $this->buildArgCTVs($reflectionMethod->getParameters());
       return Egg_CallableCall::createFixed(
         [$reflectionClass->getName(), $reflectionMethod->getName()],
-        $argCTVs,
+        $argEggs,
       );
     }
-    $argCTVs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgCTVs);
+    $argEggs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgEggs);
     return CurryCall::ctv(
       [$reflectionClass->getName(), $reflectionMethod->getName()],
-      $argCTVs,
+      $argEggs,
       $curryArgNames,
-      $callableArgCTVs,
+      $callableArgEggs,
     );
   }
 
@@ -140,42 +140,42 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildArgCTVs(array $parameters): array {
-    $argCTVs = [];
+    $argEggs = [];
     foreach ($parameters as $parameter) {
-      $ctv = $this->paramToCTV->paramGetCTV($parameter);
-      if ($ctv === NULL) {
+      $egg = $this->paramToCTV->paramGetCTV($parameter);
+      if ($egg === NULL) {
         throw new DiscoveryException(sprintf(
           'Cannot resolve parameter %s for container-to-value.',
           MessageUtil::formatReflector($parameter),
         ));
       }
-      $argCTVs[$parameter->getName()] = $ctv;
+      $argEggs[$parameter->getName()] = $egg;
     }
-    returN $argCTVs;
+    returN $argEggs;
   }
 
   /**
    * @param \ReflectionParameter[] $parameters
    * @param array|null $curryArgsMap
-   * @param array|null $callableArgCTVs
+   * @param array|null $callableArgEggs
    *
    * @return list<\Ock\Egg\Egg\EggInterface|null>
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function buildCallableArgCTVs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgCTVs): array {
-    $argCTVs = [];
+  private function buildCallableArgCTVs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgEggs): array {
+    $argEggs = [];
     foreach ($parameters as $parameter) {
-      $ctv = $this->paramToCTV->paramGetCTV($parameter);
-      $argCTVs[$parameter->getName()] = $ctv;
-      if ($ctv !== NULL) {
+      $egg = $this->paramToCTV->paramGetCTV($parameter);
+      $argEggs[$parameter->getName()] = $egg;
+      if ($egg !== NULL) {
         continue;
       }
       if ($attribute = AttributesUtil::getSingle($parameter, GetArgument::class)) {
         $curryArgsMap[$parameter->getName()] = $attribute->position;
       }
       elseif ($attribute = AttributesUtil::getSingle($parameter, CallServiceMethodWithArguments::class)) {
-        $callableArgCTVs[$attribute->getName()] = CurryCall::ctvMethodCall(
+        $callableArgEggs[$attribute->getName()] = CurryCall::ctvMethodCall(
           new Egg_ServiceId($attribute->serviceId),
           $attribute->method,
           [],
@@ -183,7 +183,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         );
       }
       elseif ($attribute = AttributesUtil::getSingle($parameter, CallServiceWithArguments::class)) {
-        $callableArgCTVs[$attribute->getName()] = CurryCall::ctv(
+        $callableArgEggs[$attribute->getName()] = CurryCall::ctv(
           new Egg_ServiceId($attribute->paramGetServiceId($parameter)),
           $attribute->method,
           [],
@@ -197,7 +197,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         ));
       }
     }
-    return $argCTVs;
+    return $argEggs;
   }
 
 }

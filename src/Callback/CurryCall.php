@@ -64,48 +64,48 @@ class CurryCall {
    *
    * @template T as mixed
    *
-   * @param \Ock\Egg\Egg\EggInterface<T>|(callable(): T) $callbackCTV
-   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
+   * @param \Ock\Egg\Egg\EggInterface<T>|(callable(): T) $callbackOrEgg
+   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgEggs
    * @param array<string, int> $curryArgsMap
-   * @param array<string, EggInterface> $callableArgCTVs
+   * @param array<string, EggInterface> $callableArgEggs
    *
    * @return \Ock\Egg\Egg\EggInterface<self<T>>
    */
   public static function ctv(
-    EggInterface|callable $callbackCTV,
-    array $namedArgCTVs,
+    EggInterface|callable $callbackOrEgg,
+    array $namedArgEggs,
     array $curryArgsMap = [],
-    array $callableArgCTVs = [],
+    array $callableArgEggs = [],
   ): EggInterface {
     return new Egg_Construct(self::class, [
-      $callbackCTV,
-      $namedArgCTVs,
+      $callbackOrEgg,
+      $namedArgEggs,
       $curryArgsMap,
-      $callableArgCTVs,
+      $callableArgEggs,
     ]);
   }
 
   /**
    * @param class-string|\Ock\Egg\Egg\EggInterface $classOrEgg
    * @param string $method
-   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
+   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgEggs
    * @param array<string, int> $curryArgsMap
-   * @param array<string, EggInterface> $callableArgCTVs
+   * @param array<string, EggInterface> $callableArgEggs
    *
    * @return \Ock\Egg\Egg\EggInterface<self>
    */
   public static function ctvMethodCall(
     string|EggInterface $classOrEgg,
     string $method,
-    array $namedArgCTVs,
+    array $namedArgEggs,
     array $curryArgsMap = [],
-    array $callableArgCTVs = [],
+    array $callableArgEggs = [],
   ): EggInterface {
     return new Egg_Construct(self::class, [
       [$classOrEgg, $method],
-      $namedArgCTVs,
+      $namedArgEggs,
       $curryArgsMap,
-      $callableArgCTVs,
+      $callableArgEggs,
     ]);
   }
 

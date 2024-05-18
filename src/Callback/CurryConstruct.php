@@ -33,23 +33,23 @@ class CurryConstruct {
    * @template T as object
    *
    * @param class-string<T> $class
-   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
+   * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgEggs
    * @param list<string> $curryArgNames
-   * @param array $callableArgCTVs
+   * @param array $callableArgEggs
    *
    * @return \Ock\Egg\Egg\EggInterface<self<T>>
    */
   public static function ctv(
     string $class,
-    array $namedArgCTVs,
+    array $namedArgEggs,
     array $curryArgNames = [],
-    array $callableArgCTVs = [],
+    array $callableArgEggs = [],
   ): EggInterface {
     return new Egg_Construct(self::class, [
       $class,
-      $namedArgCTVs,
+      $namedArgEggs,
       $curryArgNames,
-      $callableArgCTVs,
+      $callableArgEggs,
     ]);
   }
 

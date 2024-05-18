@@ -21,10 +21,10 @@ class Container_CTVs implements ContainerInterface {
   /**
    * Constructor.
    *
-   * @param \Ock\Egg\Egg\EggInterface[] $ctvs
+   * @param \Ock\Egg\Egg\EggInterface[] $eggs
    */
   public function __construct(
-    private readonly array $ctvs,
+    private readonly array $eggs,
   ) {}
 
   /**
@@ -38,11 +38,11 @@ class Container_CTVs implements ContainerInterface {
     $emptyCtvList = new CTVList_Discovery_ServiceAttribute(
       ParamToCTV::create(),
     );
-    $ctvs = $emptyCtvList
+    $eggs = $emptyCtvList
       ->withClassFilesIA($containerDiscoveryClassFilesIA)
       ->getCTVs();
-    $ctvs[ContainerInterface::class] = new Egg_Container();
-    return new Container_CTVs($ctvs);
+    $eggs[ContainerInterface::class] = new Egg_Container();
+    return new Container_CTVs($eggs);
   }
 
   /**
@@ -55,7 +55,7 @@ class Container_CTVs implements ContainerInterface {
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
-      ??= ($this->ctvs[$id] ?? $this->fail($id))->hatch($this);
+      ??= ($this->eggs[$id] ?? $this->fail($id))->hatch($this);
   }
 
   /**
@@ -75,7 +75,7 @@ class Container_CTVs implements ContainerInterface {
    * {@inheritdoc}
    */
   public function has(string $id): bool {
-    return isset($this->ctvs[$id]);
+    return isset($this->eggs[$id]);
   }
 
 }

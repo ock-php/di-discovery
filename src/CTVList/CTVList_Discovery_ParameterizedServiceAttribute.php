@@ -30,31 +30,31 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * {@inheritdoc}
    */
   public function getCTVs(): array {
-    $ctvs = [];
+    $eggs = [];
     /** @var \ReflectionClass $reflectionClass */
     foreach ($this->itReflectionClasses() as $reflectionClass) {
       /** @var \Donquixote\DID\Attribute\ParametricService[] $serviceAttributes */
       $serviceAttributes = AttributesUtil::getAll($reflectionClass, ParametricService::class);
       if ($serviceAttributes) {
-        $ctv = $this->onClass($reflectionClass);
+        $egg = $this->onClass($reflectionClass);
         foreach ($serviceAttributes as $serviceAttribute) {
           $serviceId = $serviceAttribute->reflectorGetServiceId($reflectionClass);
-          $ctvs[$serviceId] = $ctv;
+          $eggs[$serviceId] = $egg;
         }
       }
       foreach ($reflectionClass->getMethods() as $reflectionMethod) {
         /** @var \Donquixote\DID\Attribute\ParametricService[] $serviceAttributes */
         $serviceAttributes = AttributesUtil::getAll($reflectionMethod, ParametricService::class);
         if ($serviceAttributes) {
-          $ctv = $this->onMethod($reflectionClass, $reflectionMethod);
+          $egg = $this->onMethod($reflectionClass, $reflectionMethod);
           foreach ($serviceAttributes as $serviceAttribute) {
             $serviceId = $serviceAttribute->reflectorGetServiceId($reflectionMethod);
-            $ctvs[$serviceId] = $ctv;
+            $eggs[$serviceId] = $egg;
           }
         }
       }
     }
-    return $ctvs;
+    return $eggs;
   }
 
   /**
@@ -70,18 +70,18 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
         $reflectionClass->getName(),
       ));
     }
-    $argCTVs = [];
+    $argEggs = [];
     $curryArgNames = [];
     foreach ($reflectionClass->getConstructor()?->getParameters() ?? [] as $parameter) {
       $attributes = AttributesUtil::getAll($parameter, GetArgument::class);
       if ($attributes !== []) {
 
       }
-      $argCTVs[] = $this->paramToCTV->paramGetCTV($parameter);
+      $argEggs[] = $this->paramToCTV->paramGetCTV($parameter);
     }
     return CurryConstruct::ctv(
       $reflectionClass->getName(),
-      $argCTVs,
+      $argEggs,
       $curryArgNames,
     );
   }
@@ -100,10 +100,10 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
         MessageUtil::formatReflector($reflectionMethod),
       ));
     }
-    $argCTVs = $this->buildArgCTVs($reflectionMethod->getParameters());
+    $argEggs = $this->buildArgCTVs($reflectionMethod->getParameters());
     return Egg_CallableCall::createFixed(
       [$reflectionClass->getName(), $reflectionMethod->getName()],
-      $argCTVs,
+      $argEggs,
     );
   }
 
@@ -115,18 +115,18 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildArgCTVs(array $parameters): array {
-    $argCTVs = [];
+    $argEggs = [];
     foreach ($parameters as $parameter) {
-      $ctv = $this->paramToCTV->paramGetCTV($parameter);
-      if ($ctv === NULL) {
+      $egg = $this->paramToCTV->paramGetCTV($parameter);
+      if ($egg === NULL) {
         throw new DiscoveryException(sprintf(
           'Cannot resolve parameter %s for container-to-value.',
           MessageUtil::formatReflector($parameter),
         ));
       }
-      $argCTVs[] = $ctv;
+      $argEggs[] = $egg;
     }
-    return $argCTVs;
+    return $argEggs;
   }
 
 }

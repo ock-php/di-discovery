@@ -25,13 +25,13 @@ class ClassToCTV_Construct implements ClassToCTVInterface {
    * {@inheritdoc}
    */
   public function classGetCTV(\ReflectionClass $reflectionClass): EggInterface {
-    $argCTVs = [];
+    $argEggs = [];
     foreach ($reflectionClass->getConstructor()?->getParameters() ?? [] as $parameter) {
-      $argCTVs[] = $this->paramToCTV->paramGetCTV($parameter);
+      $argEggs[] = $this->paramToCTV->paramGetCTV($parameter);
     }
     return new Egg_Construct(
       $reflectionClass->getName(),
-      $argCTVs,
+      $argEggs,
     );
   }
 

@@ -26,9 +26,9 @@ class ParamToCTV_Chain implements ParamToCTVInterface {
    */
   public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface {
     foreach ($this->p2CTVs as $paramToCTV) {
-      $ctv = $paramToCTV->paramGetCTV($parameter);
-      if ($ctv !== NULL) {
-        return $ctv;
+      $egg = $paramToCTV->paramGetCTV($parameter);
+      if ($egg !== NULL) {
+        return $egg;
       }
     }
     return NULL;
