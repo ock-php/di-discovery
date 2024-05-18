@@ -55,7 +55,7 @@ class Container_CTVs implements ContainerInterface {
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
-      ??= ($this->ctvs[$id] ?? $this->fail($id))->containerGetValue($this);
+      ??= ($this->ctvs[$id] ?? $this->fail($id))->hatch($this);
   }
 
   /**
