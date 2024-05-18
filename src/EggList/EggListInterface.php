@@ -11,6 +11,6 @@ interface EggListInterface {
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  public function getCTVs(): array;
+  public function getEggs(): array;
 
 }

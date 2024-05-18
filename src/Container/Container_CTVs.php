@@ -40,7 +40,7 @@ class Container_CTVs implements ContainerInterface {
     );
     $eggs = $emptyCtvList
       ->withClassFilesIA($containerDiscoveryClassFilesIA)
-      ->getCTVs();
+      ->getEggs();
     $eggs[ContainerInterface::class] = new Egg_Container();
     return new Container_CTVs($eggs);
   }

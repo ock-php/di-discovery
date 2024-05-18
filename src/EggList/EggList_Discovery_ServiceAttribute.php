@@ -34,7 +34,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
   /**
    * {@inheritdoc}
    */
-  public function getCTVs(): array {
+  public function getEggs(): array {
     $eggs = [];
     /** @var \ReflectionClass $reflectionClass */
     foreach ($this->itReflectionClasses() as $reflectionClass) {

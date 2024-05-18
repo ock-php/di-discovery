@@ -29,7 +29,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
   /**
    * {@inheritdoc}
    */
-  public function getCTVs(): array {
+  public function getEggs(): array {
     $eggs = [];
     /** @var \ReflectionClass $reflectionClass */
     foreach ($this->itReflectionClasses() as $reflectionClass) {
