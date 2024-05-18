@@ -16,7 +16,7 @@ class ParamToEgg_Attribute_CallService implements ParamToEggInterface {
   /**
    * {@inheritdoc}
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface {
+  public function paramGetEgg(\ReflectionParameter $parameter): ?EggInterface {
     $attribute = AttributesUtil::getSingle($parameter, CallService::class);
     if ($attribute === NULL) {
       return NULL;

@@ -15,7 +15,7 @@ class ParamToEgg_Attribute_GetContainer implements ParamToEggInterface {
   /**
    * {@inheritdoc}
    */
-  public function paramGetCTV(\ReflectionParameter $parameter): ?EggInterface {
+  public function paramGetEgg(\ReflectionParameter $parameter): ?EggInterface {
     return AttributesUtil::hasSingle($parameter, GetContainer::class)
       ? new Egg_Container()
       : NULL;

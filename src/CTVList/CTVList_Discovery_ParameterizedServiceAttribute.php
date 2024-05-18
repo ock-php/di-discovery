@@ -77,7 +77,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
       if ($attributes !== []) {
 
       }
-      $argEggs[] = $this->paramToEgg->paramGetCTV($parameter);
+      $argEggs[] = $this->paramToEgg->paramGetEgg($parameter);
     }
     return CurryConstruct::ctv(
       $reflectionClass->getName(),
@@ -117,7 +117,7 @@ class CTVList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
   private function buildArgCTVs(array $parameters): array {
     $argEggs = [];
     foreach ($parameters as $parameter) {
-      $egg = $this->paramToEgg->paramGetCTV($parameter);
+      $egg = $this->paramToEgg->paramGetEgg($parameter);
       if ($egg === NULL) {
         throw new DiscoveryException(sprintf(
           'Cannot resolve parameter %s for container-to-value.',

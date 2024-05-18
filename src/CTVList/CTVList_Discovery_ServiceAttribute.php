@@ -142,7 +142,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
   private function buildArgCTVs(array $parameters): array {
     $argEggs = [];
     foreach ($parameters as $parameter) {
-      $egg = $this->paramToEgg->paramGetCTV($parameter);
+      $egg = $this->paramToEgg->paramGetEgg($parameter);
       if ($egg === NULL) {
         throw new DiscoveryException(sprintf(
           'Cannot resolve parameter %s for container-to-value.',
@@ -166,7 +166,7 @@ class CTVList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
   private function buildCallableArgCTVs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgEggs): array {
     $argEggs = [];
     foreach ($parameters as $parameter) {
-      $egg = $this->paramToEgg->paramGetCTV($parameter);
+      $egg = $this->paramToEgg->paramGetEgg($parameter);
       $argEggs[$parameter->getName()] = $egg;
       if ($egg !== NULL) {
         continue;
