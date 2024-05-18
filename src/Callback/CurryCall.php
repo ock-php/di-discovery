@@ -86,7 +86,7 @@ class CurryCall {
   }
 
   /**
-   * @param class-string|\Ock\Egg\Egg\EggInterface $classOrObjectCTV
+   * @param class-string|\Ock\Egg\Egg\EggInterface $classOrEgg
    * @param string $method
    * @param list<\Ock\Egg\Egg\EggInterface|mixed> $namedArgCTVs
    * @param array<string, int> $curryArgsMap
@@ -95,14 +95,14 @@ class CurryCall {
    * @return \Ock\Egg\Egg\EggInterface<self>
    */
   public static function ctvMethodCall(
-    string|EggInterface $classOrObjectCTV,
+    string|EggInterface $classOrEgg,
     string $method,
     array $namedArgCTVs,
     array $curryArgsMap = [],
     array $callableArgCTVs = [],
   ): EggInterface {
     return new Egg_Construct(self::class, [
-      [$classOrObjectCTV, $method],
+      [$classOrEgg, $method],
       $namedArgCTVs,
       $curryArgsMap,
       $callableArgCTVs,
