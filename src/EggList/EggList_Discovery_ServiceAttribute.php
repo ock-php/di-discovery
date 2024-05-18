@@ -92,7 +92,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
       );
     }
     $argEggs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgEggs);
-    return CurryConstruct::ctv(
+    return CurryConstruct::egg(
       $reflectionClass->getName(),
       $argEggs,
       $curryArgNames,
@@ -124,7 +124,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
       );
     }
     $argEggs = $this->buildCallableArgCTVs($parameters, $curryArgNames, $callableArgEggs);
-    return CurryCall::ctv(
+    return CurryCall::egg(
       [$reflectionClass->getName(), $reflectionMethod->getName()],
       $argEggs,
       $curryArgNames,
@@ -175,7 +175,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         $curryArgsMap[$parameter->getName()] = $attribute->position;
       }
       elseif ($attribute = AttributesUtil::getSingle($parameter, CallServiceMethodWithArguments::class)) {
-        $callableArgEggs[$attribute->getName()] = CurryCall::ctvMethodCall(
+        $callableArgEggs[$attribute->getName()] = CurryCall::eggMethodCall(
           new Egg_ServiceId($attribute->serviceId),
           $attribute->method,
           [],
@@ -183,7 +183,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         );
       }
       elseif ($attribute = AttributesUtil::getSingle($parameter, CallServiceWithArguments::class)) {
-        $callableArgEggs[$attribute->getName()] = CurryCall::ctv(
+        $callableArgEggs[$attribute->getName()] = CurryCall::egg(
           new Egg_ServiceId($attribute->paramGetServiceId($parameter)),
           $attribute->method,
           [],

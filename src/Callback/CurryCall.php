@@ -71,7 +71,7 @@ class CurryCall {
    *
    * @return \Ock\Egg\Egg\EggInterface<self<T>>
    */
-  public static function ctv(
+  public static function egg(
     EggInterface|callable $callbackOrEgg,
     array $namedArgEggs,
     array $curryArgsMap = [],
@@ -94,7 +94,7 @@ class CurryCall {
    *
    * @return \Ock\Egg\Egg\EggInterface<self>
    */
-  public static function ctvMethodCall(
+  public static function eggMethodCall(
     string|EggInterface $classOrEgg,
     string $method,
     array $namedArgEggs,

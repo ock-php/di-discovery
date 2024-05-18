@@ -79,7 +79,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
       }
       $argEggs[] = $this->paramToEgg->paramGetEgg($parameter);
     }
-    return CurryConstruct::ctv(
+    return CurryConstruct::egg(
       $reflectionClass->getName(),
       $argEggs,
       $curryArgNames,

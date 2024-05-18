@@ -39,7 +39,7 @@ class CurryConstruct {
    *
    * @return \Ock\Egg\Egg\EggInterface<self<T>>
    */
-  public static function ctv(
+  public static function egg(
     string $class,
     array $namedArgEggs,
     array $curryArgNames = [],
