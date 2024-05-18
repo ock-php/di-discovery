@@ -100,7 +100,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
         MessageUtil::formatReflector($reflectionMethod),
       ));
     }
-    $argEggs = $this->buildArgCTVs($reflectionMethod->getParameters());
+    $argEggs = $this->buildArgEggs($reflectionMethod->getParameters());
     return Egg_CallableCall::createFixed(
       [$reflectionClass->getName(), $reflectionMethod->getName()],
       $argEggs,
@@ -114,7 +114,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function buildArgCTVs(array $parameters): array {
+  private function buildArgEggs(array $parameters): array {
     $argEggs = [];
     foreach ($parameters as $parameter) {
       $egg = $this->paramToEgg->paramGetEgg($parameter);

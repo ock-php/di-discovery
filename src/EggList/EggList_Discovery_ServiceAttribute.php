@@ -85,7 +85,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     }
     $parameters = $reflectionClass->getConstructor()?->getParameters() ?? [];
     if (!$isCallableService) {
-      $argEggs = $this->buildArgCTVs($parameters);
+      $argEggs = $this->buildArgEggs($parameters);
       return new Egg_Construct(
         $reflectionClass->getName(),
         $argEggs,
@@ -117,7 +117,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     }
     $parameters = $reflectionClass->getConstructor()?->getParameters();
     if (!$isCallableService) {
-      $argEggs = $this->buildArgCTVs($reflectionMethod->getParameters());
+      $argEggs = $this->buildArgEggs($reflectionMethod->getParameters());
       return Egg_CallableCall::createFixed(
         [$reflectionClass->getName(), $reflectionMethod->getName()],
         $argEggs,
@@ -139,7 +139,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    *
    * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
    */
-  private function buildArgCTVs(array $parameters): array {
+  private function buildArgEggs(array $parameters): array {
     $argEggs = [];
     foreach ($parameters as $parameter) {
       $egg = $this->paramToEgg->paramGetEgg($parameter);
