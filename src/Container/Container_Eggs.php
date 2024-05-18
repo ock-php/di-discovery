@@ -11,7 +11,7 @@ use Ock\Egg\Egg\Egg_Container;
 use Donquixote\DID\ParamToEgg\ParamToEgg;
 use Psr\Container\ContainerInterface;
 
-class Container_CTVs implements ContainerInterface {
+class Container_Eggs implements ContainerInterface {
 
   /**
    * @var array
@@ -42,7 +42,7 @@ class Container_CTVs implements ContainerInterface {
       ->withClassFilesIA($containerDiscoveryClassFilesIA)
       ->getEggs();
     $eggs[ContainerInterface::class] = new Egg_Container();
-    return new Container_CTVs($eggs);
+    return new Container_Eggs($eggs);
   }
 
   /**
