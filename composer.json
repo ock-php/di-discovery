@@ -1,12 +1,12 @@
 {
-    "name": "donquixote/di-discovery",
+    "name": "ock/di-discovery",
     "description": "Dependency injection discovery (DID)",
     "license": "GPL-2.0-or-later",
     "require": {
         "php": ">=8.2",
-        "donquixote/class-discovery": "@dev",
-        "donquixote/codegen-tools": "@dev",
-        "donquixote/helpers": "@dev",
+        "ock/class-discovery": "@dev",
+        "ock/codegen-tools": "@dev",
+        "ock/helpers": "@dev",
         "psr/container": "^2.0",
         "psr/log": "^1.1.4|^2.0|^3.0"
     },
