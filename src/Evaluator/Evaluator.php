@@ -82,11 +82,10 @@ class Evaluator implements EvaluatorInterface {
       return fn (...$args) => $this->withParametricArgs($args)->evaluate($definition->value);
     }
     if ($definition instanceof ValueDefinition_GetArgument) {
-      /** @noinspection PhpVoidFunctionResultUsedInspection */
       return $this->parametricArgs[$definition->position]
         ?? (array_key_exists($definition->position,  $this->parametricArgs)
           ? NULL
-          : $this->fail($this->parametricArgs !== NULL
+          : throw new ContainerToValueException($this->parametricArgs !== NULL
             ? "Missing parametric argument $definition->position."
             : "Parametric argument outside of parametric service."
           )
@@ -112,16 +111,6 @@ class Evaluator implements EvaluatorInterface {
     $clone = clone $this;
     $clone->parametricArgs = $args;
     return $clone;
-  }
-
-  /**
-   * @param string $message
-   *
-   * @return never
-   * @throws \Ock\DID\Exception\ContainerToValueException
-   */
-  private function fail(string $message): never {
-    throw new ContainerToValueException($message);
   }
 
 }
