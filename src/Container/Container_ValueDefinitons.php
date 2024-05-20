@@ -6,7 +6,7 @@ namespace Ock\DID\Container;
 
 use Ock\DID\Evaluator\Evaluator_Empty;
 use Ock\DID\Evaluator\EvaluatorInterface;
-use Ock\DID\Exception\ContainerToValueException;
+use Ock\DID\Exception\ServiceNotFoundException;
 use Ock\DID\ValueDefinition\ValueDefinition_Call;
 use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
 use Ock\DID\ValueDefinition\ValueDefinition_Construct;
@@ -72,7 +72,7 @@ class Container_ValueDefinitons implements ContainerInterface {
    *
    * @return T|mixed
    *
-   * @throws \Ock\DID\Exception\ContainerToValueException
+   * @throws \Psr\Container\ContainerExceptionInterface
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
@@ -83,10 +83,10 @@ class Container_ValueDefinitons implements ContainerInterface {
    * @param string $id
    *
    * @return never
-   * @throws \Ock\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ServiceNotFoundException
    */
   private function fail(string $id): never {
-    throw new ContainerToValueException(sprintf(
+    throw new ServiceNotFoundException(sprintf(
       'Cannot retrieve service %s.',
       $id,
     ));

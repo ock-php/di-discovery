@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Ock\DID\Container;
 
-use Ock\DID\Exception\ContainerToValueException;
+use Ock\DID\Exception\ServiceNotFoundException;
 use Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
 use Psr\Container\ContainerInterface;
 
@@ -44,7 +44,7 @@ class Container_ServiceCallbacks implements ContainerInterface {
    * @param class-string<T>|string $id
    *
    * @return T|mixed
-   * @throws \Ock\DID\Exception\ContainerToValueException
+   * @throws \Psr\Container\ContainerExceptionInterface
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
@@ -55,10 +55,10 @@ class Container_ServiceCallbacks implements ContainerInterface {
    * @param string $id
    *
    * @return never
-   * @throws \Ock\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ServiceNotFoundException
    */
   private function fail(string $id): never {
-    throw new ContainerToValueException(sprintf(
+    throw new ServiceNotFoundException(sprintf(
       'Cannot retrieve service %s.',
       $id,
     ));
