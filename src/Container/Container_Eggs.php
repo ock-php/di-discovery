@@ -6,7 +6,7 @@ namespace Ock\DID\Container;
 
 use Ock\ClassDiscovery\ClassFilesIA\ClassFilesIA;
 use Ock\DID\EggList\EggList_Discovery_ServiceAttribute;
-use Ock\DID\Exception\ContainerToValueException;
+use Ock\DID\Exception\ServiceNotFoundException;
 use Ock\DID\ParamToEgg\ParamToEgg;
 use Ock\Egg\Egg\Egg_Container;
 use Psr\Container\ContainerInterface;
@@ -62,10 +62,10 @@ class Container_Eggs implements ContainerInterface {
    * @param string $id
    *
    * @return never
-   * @throws \Ock\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ServiceNotFoundException
    */
   private function fail(string $id): never {
-    throw new ContainerToValueException(sprintf(
+    throw new ServiceNotFoundException(sprintf(
       'Cannot retrieve service %s.',
       $id,
     ));
