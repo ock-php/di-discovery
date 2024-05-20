@@ -51,6 +51,7 @@ class Container_Eggs implements ContainerInterface {
    * @param class-string<T>|string $id
    *
    * @return T|mixed
+   *
    * @throws \Psr\Container\ContainerExceptionInterface
    */
   public function get(string $id): mixed {
