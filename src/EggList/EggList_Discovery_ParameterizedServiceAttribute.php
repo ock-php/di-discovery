@@ -11,10 +11,10 @@ use Ock\ClassDiscovery\Util\AttributesUtil;
 use Ock\DID\Attribute\Parameter\GetArgument;
 use Ock\DID\Attribute\ParametricService;
 use Ock\DID\Callback\CurryConstruct;
-use Ock\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\EggInterface;
 use Ock\Egg\ParamToEgg\ParamToEggInterface;
+use Ock\Helpers\Util\MessageUtil;
 
 class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesIAHavingBase implements EggListInterface {
 

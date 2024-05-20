@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace Ock\DID\ParamToEgg;
 
-use Ock\DID\ParamToEgg\ParamToEgg_Attribute_GetService;
 use Ock\Egg\ParamToEgg\ParamToEgg_Chain;
 use Ock\Egg\ParamToEgg\ParamToEggInterface;
 

@@ -7,8 +7,8 @@ namespace Ock\DID\Container;
 use Ock\ClassDiscovery\ClassFilesIA\ClassFilesIA;
 use Ock\DID\EggList\EggList_Discovery_ServiceAttribute;
 use Ock\DID\Exception\ContainerToValueException;
-use Ock\Egg\Egg\Egg_Container;
 use Ock\DID\ParamToEgg\ParamToEgg;
+use Ock\Egg\Egg\Egg_Container;
 use Psr\Container\ContainerInterface;
 
 class Container_Eggs implements ContainerInterface {

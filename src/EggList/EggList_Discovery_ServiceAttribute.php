@@ -13,12 +13,12 @@ use Ock\DID\Attribute\Parameter\GetArgument;
 use Ock\DID\Attribute\ServiceDefinitionAttributeInterface;
 use Ock\DID\Callback\CurryCall;
 use Ock\DID\Callback\CurryConstruct;
-use Ock\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;
 use Ock\Egg\ParamToEgg\ParamToEggInterface;
+use Ock\Helpers\Util\MessageUtil;
 
 class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase implements EggListInterface {
 
