@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Tests\Fixtures;
+namespace Ock\DID\Tests\Fixtures;
 
 class GenericObject {
 

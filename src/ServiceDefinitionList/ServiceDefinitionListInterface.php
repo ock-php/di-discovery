@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ServiceDefinitionList;
+namespace Ock\DID\ServiceDefinitionList;
 
 /**
  * @template KeyedById as bool
@@ -10,9 +10,9 @@ namespace Donquixote\DID\ServiceDefinitionList;
 interface ServiceDefinitionListInterface {
 
   /**
-   * @return \Donquixote\DID\ServiceDefinition\ServiceDefinition[]
+   * @return \Ock\DID\ServiceDefinition\ServiceDefinition[]
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   public function getDefinitions(): array;
 

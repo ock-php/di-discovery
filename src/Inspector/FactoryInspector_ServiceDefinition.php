@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Inspector;
+namespace Ock\DID\Inspector;
 
-use Donquixote\ClassDiscovery\Exception\DiscoveryException;
-use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\ClassDiscovery\Inspector\FactoryInspectorInterface;
-use Donquixote\ClassDiscovery\Reflection\FactoryReflectionInterface;
-use Donquixote\ClassDiscovery\Reflection\MethodReflection;
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
-use Donquixote\DID\Attribute\Parameter\ServiceArgumentAttributeInterface;
-use Donquixote\DID\Attribute\ServiceDefinitionAttributeBase;
-use Donquixote\DID\Attribute\ServiceDiscoveryUtil;
-use Donquixote\DID\ServiceDefinition\ServiceDefinition;
-use Donquixote\DID\ValueDefinition\ValueDefinition;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Exception\DiscoveryException;
+use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
+use Ock\ClassDiscovery\Inspector\FactoryInspectorInterface;
+use Ock\ClassDiscovery\Reflection\FactoryReflectionInterface;
+use Ock\ClassDiscovery\Reflection\MethodReflection;
+use Ock\ClassDiscovery\Util\AttributesUtil;
+use Ock\DID\Attribute\Parameter\ServiceArgumentAttributeInterface;
+use Ock\DID\Attribute\ServiceDefinitionAttributeBase;
+use Ock\DID\Attribute\ServiceDiscoveryUtil;
+use Ock\DID\ServiceDefinition\ServiceDefinition;
+use Ock\DID\ValueDefinition\ValueDefinition;
+use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
+use Ock\Helpers\Util\MessageUtil;
 
 /**
- * @template-implements FactoryInspectorInterface<\Donquixote\DID\ServiceDefinition\ServiceDefinition>
+ * @template-implements FactoryInspectorInterface<\Ock\DID\ServiceDefinition\ServiceDefinition>
  */
 class FactoryInspector_ServiceDefinition implements FactoryInspectorInterface {
 
@@ -80,7 +80,7 @@ class FactoryInspector_ServiceDefinition implements FactoryInspectorInterface {
    *
    * @return array
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   protected function buildArgumentDefinitions(array $parameters): array {
     $args = [];

@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
-use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
+use Ock\ClassDiscovery\Util\ReflectionTypeUtil;
+use Ock\Helpers\Util\MessageUtil;
 
 /**
  * Treats the service as a callable.
@@ -34,7 +34,7 @@ class CallServiceWithArguments {
    * @param \ReflectionParameter $parameter
    *
    * @return string
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function paramGetServiceId(\ReflectionParameter $parameter): string {
     if ($this->serviceId !== NULL) {

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ValueDefinition;
+namespace Ock\DID\ValueDefinition;
 
 /**
  * Abstract interface with no methods.
@@ -14,8 +14,8 @@ final class ValueDefinition_CallObjectMethod implements ValueDefinitionInterface
   /**
    * Constructor.
    *
-   * @param \Donquixote\DID\ValueDefinition\ValueDefinitionInterface $object
-   * @param string|\Donquixote\DID\ValueDefinition\ValueDefinitionInterface $method
+   * @param \Ock\DID\ValueDefinition\ValueDefinitionInterface $object
+   * @param string|\Ock\DID\ValueDefinition\ValueDefinitionInterface $method
    * @param array<array-key, ValueDefinitionInterface|mixed> $args
    */
   public function __construct(

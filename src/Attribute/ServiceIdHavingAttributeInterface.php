@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute;
+namespace Ock\DID\Attribute;
 
 /**
  * The object can provide a service id for a container.

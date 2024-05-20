@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ParamToEgg;
+namespace Ock\DID\ParamToEgg;
 
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
-use Donquixote\DID\Attribute\Parameter\GetParametricService;
+use Ock\ClassDiscovery\Util\AttributesUtil;
+use Ock\DID\Attribute\Parameter\GetParametricService;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;

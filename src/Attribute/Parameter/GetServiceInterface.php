@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
 /**
  * Gets a callable service from the container.
@@ -15,7 +15,7 @@ interface GetServiceInterface extends ServiceArgumentAttributeInterface {
    *
    * @return string
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function paramGetServiceId(\ReflectionParameter $parameter): string;
 

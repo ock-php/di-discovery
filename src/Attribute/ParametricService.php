@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute;
+namespace Ock\DID\Attribute;
 
 /**
  * Marks a class or method as a parameterized service.
@@ -10,7 +10,7 @@ namespace Donquixote\DID\Attribute;
  * the return value of that callback will be an instance of the class, or a
  * return value of the method that was marked.
  *
- * @see \Donquixote\DID\EggList\EggList_Discovery_ParameterizedServiceAttribute
+ * @see \Ock\DID\EggList\EggList_Discovery_ParameterizedServiceAttribute
  */
 #[\Attribute(\Attribute::TARGET_METHOD|\Attribute::TARGET_CLASS|\Attribute::IS_REPEATABLE)]
 final class ParametricService extends ServiceDefinitionAttributeBase {

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Callback;
+namespace Ock\DID\Callback;
 
 use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\EggInterface;

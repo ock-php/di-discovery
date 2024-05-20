@@ -3,11 +3,11 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
 
 return new ValueDefinition_Construct(C::class, [
   new ValueDefinition_GetService('example_service'),
@@ -41,7 +41,7 @@ return new ValueDefinition_Construct(C::class, [
 Generated code:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
+use Ock\DID\Tests\Fixtures\C;
 
 return new C(
   $container->get('example_service'),

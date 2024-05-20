@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ServiceDefinition;
+namespace Ock\DID\ServiceDefinition;
 
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 
 class ServiceDefinition {
 

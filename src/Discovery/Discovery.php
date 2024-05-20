@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Discovery;
+namespace Ock\DID\Discovery;
 
-use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
+use Ock\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
 
 class Discovery extends ReflectionClassesIAHavingBase {
 

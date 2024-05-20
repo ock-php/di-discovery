@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Exception;
+namespace Ock\DID\Exception;
 
 use Psr\Container\NotFoundExceptionInterface;
 

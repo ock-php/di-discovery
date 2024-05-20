@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ValueDefinition;
+namespace Ock\DID\ValueDefinition;
 
 final class ValueDefinition_GetService implements ValueDefinitionInterface {
 

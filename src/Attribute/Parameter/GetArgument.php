@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetArgument;
+use Ock\DID\ValueDefinition\ValueDefinition_GetArgument;
 
 /**
  * Gets an argument from a callable service.
  *
- * @see \Donquixote\DID\Attribute\ParametricService
+ * @see \Ock\DID\Attribute\ParametricService
  */
 #[\Attribute(\Attribute::TARGET_PARAMETER|\Attribute::TARGET_PROPERTY)]
 class GetArgument implements ServiceArgumentAttributeInterface {

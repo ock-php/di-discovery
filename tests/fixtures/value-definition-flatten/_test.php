@@ -5,8 +5,8 @@
  *   Original php snippet.
  */
 
-use Donquixote\DID\Tests\Util\TestUtil;
-use Donquixote\DID\ValueDefinitionProcessor\ValueDefinitionProcessor_FlatServiceDefinition;
+use Ock\DID\Tests\Util\TestUtil;
+use Ock\DID\ValueDefinitionProcessor\ValueDefinitionProcessor_FlatServiceDefinition;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
 

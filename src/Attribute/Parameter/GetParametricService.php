@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
-use Donquixote\ClassDiscovery\Attribute\ReflectorAwareAttributeInterface;
-use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Attribute\ReflectorAwareAttributeInterface;
+use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
+use Ock\ClassDiscovery\Util\ReflectionTypeUtil;
+use Ock\Helpers\Util\MessageUtil;
 
 /**
  * Treats the service as a callable.
@@ -33,7 +33,7 @@ class GetParametricService implements ReflectorAwareAttributeInterface {
    * @param \ReflectionParameter $parameter
    *
    * @return string
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function paramGetServiceId(\ReflectionParameter $parameter): string {
     if ($this->virtualServiceId !== NULL) {
@@ -62,7 +62,7 @@ class GetParametricService implements ReflectorAwareAttributeInterface {
   /**
    * @param \Reflector $reflector
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function setReflector(\Reflector $reflector): void {
     if ($this->virtualServiceId !== NULL) {

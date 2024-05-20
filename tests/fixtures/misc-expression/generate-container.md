@@ -3,13 +3,13 @@
 Executed PHP:
 
 ```php
-use Donquixote\CodegenTools\Util\CodeFormatUtil;
-use Donquixote\DID\Exception\ServiceNotFoundException;
-use Donquixote\DID\Tests\Fixtures\Services\EntryPoints;
+use Ock\CodegenTools\Util\CodeFormatUtil;
+use Ock\DID\Exception\ServiceNotFoundException;
+use Ock\DID\Tests\Fixtures\Services\EntryPoints;
 use PHPUnit\Framework\Assert;
 use Psr\Container\ContainerInterface;
 
-$generator = new \Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp('$this');
+$generator = new \Ock\DID\ValueDefinitionToPhp\ValueDefinitionToPhp('$this');
 
 $definitions = EntryPoints::getServiceDefinitionList()->getDefinitions();
 $getServicePhp = '';
@@ -66,10 +66,10 @@ return CodeFormatUtil::formatExpressionAsSnippet($expression);
 Return value:
 
 ```php
-use Donquixote\DID\Exception\ServiceNotFoundException;
-use Donquixote\DID\Tests\Fixtures\Services\SiteConfig;
-use Donquixote\DID\Tests\Fixtures\Services\Translator\Translator;
-use Donquixote\DID\Tests\Fixtures\Services\WordLookup;
+use Ock\DID\Exception\ServiceNotFoundException;
+use Ock\DID\Tests\Fixtures\Services\SiteConfig;
+use Ock\DID\Tests\Fixtures\Services\Translator\Translator;
+use Ock\DID\Tests\Fixtures\Services\WordLookup;
 use Psr\Container\ContainerInterface;
 
 return new class implements ContainerInterface {
@@ -78,14 +78,12 @@ return new class implements ContainerInterface {
 
   public function get(string $id): mixed {
     return $this->cache[$id] ??= match ($id) {
-      'Donquixote\\DID\\Tests\\Fixtures\\Services\\SiteConfig' => new SiteConfig(),
-      'Donquixote\\DID\\Tests\\Fixtures\\Services\\Translator\\Translator' => new Translator(
-        $this->get(
-          'Donquixote\\DID\\Tests\\Fixtures\\Services\\WordLookupInterface',
-        ),
+      'Ock\\DID\\Tests\\Fixtures\\Services\\SiteConfig' => new SiteConfig(),
+      'Ock\\DID\\Tests\\Fixtures\\Services\\Translator\\Translator' => new Translator(
+        $this->get('Ock\\DID\\Tests\\Fixtures\\Services\\WordLookupInterface'),
       ),
-      'Donquixote\\DID\\Tests\\Fixtures\\Services\\WordLookupInterface' => new WordLookup(
-        $this->get('Donquixote\\DID\\Tests\\Fixtures\\Services\\SiteConfig'),
+      'Ock\\DID\\Tests\\Fixtures\\Services\\WordLookupInterface' => new WordLookup(
+        $this->get('Ock\\DID\\Tests\\Fixtures\\Services\\SiteConfig'),
       ),
       default => $this->fail($id),
     };
@@ -93,9 +91,9 @@ return new class implements ContainerInterface {
 
   public function has(string $id): bool {
     return isset([
-      'Donquixote\\DID\\Tests\\Fixtures\\Services\\SiteConfig' => true,
-      'Donquixote\\DID\\Tests\\Fixtures\\Services\\Translator\\Translator' => true,
-      'Donquixote\\DID\\Tests\\Fixtures\\Services\\WordLookupInterface' => true,
+      'Ock\\DID\\Tests\\Fixtures\\Services\\SiteConfig' => true,
+      'Ock\\DID\\Tests\\Fixtures\\Services\\Translator\\Translator' => true,
+      'Ock\\DID\\Tests\\Fixtures\\Services\\WordLookupInterface' => true,
     ][$id]);
   }
 

@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Tests\Fixtures\Services;
+namespace Ock\DID\Tests\Fixtures\Services;
 
-use Donquixote\DID\Attribute\Service;
+use Ock\DID\Attribute\Service;
 
 #[Service]
 class SiteConfig {

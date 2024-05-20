@@ -2,16 +2,16 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\EggList;
+namespace Ock\DID\EggList;
 
-use Donquixote\ClassDiscovery\Exception\DiscoveryException;
-use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
-use Donquixote\DID\Attribute\Parameter\GetArgument;
-use Donquixote\DID\Attribute\ParametricService;
-use Donquixote\DID\Callback\CurryConstruct;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Exception\DiscoveryException;
+use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
+use Ock\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
+use Ock\ClassDiscovery\Util\AttributesUtil;
+use Ock\DID\Attribute\Parameter\GetArgument;
+use Ock\DID\Attribute\ParametricService;
+use Ock\DID\Callback\CurryConstruct;
+use Ock\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\EggInterface;
 use Ock\Egg\ParamToEgg\ParamToEggInterface;
@@ -34,7 +34,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
     $eggs = [];
     /** @var \ReflectionClass $reflectionClass */
     foreach ($this->itReflectionClasses() as $reflectionClass) {
-      /** @var \Donquixote\DID\Attribute\ParametricService[] $serviceAttributes */
+      /** @var \Ock\DID\Attribute\ParametricService[] $serviceAttributes */
       $serviceAttributes = AttributesUtil::getAll($reflectionClass, ParametricService::class);
       if ($serviceAttributes) {
         $egg = $this->onClass($reflectionClass);
@@ -44,7 +44,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
         }
       }
       foreach ($reflectionClass->getMethods() as $reflectionMethod) {
-        /** @var \Donquixote\DID\Attribute\ParametricService[] $serviceAttributes */
+        /** @var \Ock\DID\Attribute\ParametricService[] $serviceAttributes */
         $serviceAttributes = AttributesUtil::getAll($reflectionMethod, ParametricService::class);
         if ($serviceAttributes) {
           $egg = $this->onMethod($reflectionClass, $reflectionMethod);
@@ -62,7 +62,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * @param \ReflectionClass $reflectionClass
    *
    * @return \Ock\Egg\Egg\EggInterface
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function onClass(\ReflectionClass $reflectionClass): EggInterface {
     if (!$reflectionClass->isInstantiable()) {
@@ -93,7 +93,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    * @param \ReflectionMethod $reflectionMethod
    *
    * @return \Ock\Egg\Egg\EggInterface
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod): EggInterface {
     if (!$reflectionMethod->isStatic()) {
@@ -115,7 +115,7 @@ class EggList_Discovery_ParameterizedServiceAttribute extends ReflectionClassesI
    *
    * @return \Ock\Egg\Egg\EggInterface[]
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildArgEggs(array $parameters): array {
     $argEggs = [];

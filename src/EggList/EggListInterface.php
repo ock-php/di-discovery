@@ -2,14 +2,14 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\EggList;
+namespace Ock\DID\EggList;
 
 interface EggListInterface {
 
   /**
    * @return \Ock\Egg\Egg\EggInterface[]
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   public function getEggs(): array;
 

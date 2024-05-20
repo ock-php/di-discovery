@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Evaluator;
+namespace Ock\DID\Evaluator;
 
 use Psr\Container\ContainerInterface;
 
@@ -18,7 +18,7 @@ interface EvaluatorInterface {
   public function withContainer(ContainerInterface $container): self;
 
   /**
-   * @param mixed|\Donquixote\DID\ValueDefinition\ValueDefinitionInterface $definition
+   * @param mixed|\Ock\DID\ValueDefinition\ValueDefinitionInterface $definition
    *
    * @return mixed
    *

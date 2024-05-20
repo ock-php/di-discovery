@@ -12,6 +12,6 @@ return function (ContainerConfigurator $container): void {
     ->autoconfigure();
 
   // The path is relative to the package root where 'services.php' is located.
-  $services->load('Donquixote\\DID\\', 'src/');
+  $services->load('Ock\\DID\\', 'src/');
 };
 

@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 
 #[\Attribute(\Attribute::TARGET_PARAMETER|\Attribute::TARGET_PROPERTY)]
 class CallServiceMethod {

@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Tests\Fixtures;
+namespace Ock\DID\Tests\Fixtures;
 
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 
 class UnknownValueDefinition implements ValueDefinitionInterface {
 

@@ -2,17 +2,17 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Container;
+namespace Ock\DID\Container;
 
-use Donquixote\DID\Evaluator\Evaluator_Empty;
-use Donquixote\DID\Evaluator\EvaluatorInterface;
-use Donquixote\DID\Exception\ContainerToValueException;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\Evaluator\Evaluator_Empty;
+use Ock\DID\Evaluator\EvaluatorInterface;
+use Ock\DID\Exception\ContainerToValueException;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 use Psr\Container\ContainerInterface;
 
 class Container_ValueDefinitons implements ContainerInterface {
@@ -23,14 +23,14 @@ class Container_ValueDefinitons implements ContainerInterface {
   private array $cache = [];
 
   /**
-   * @var \Donquixote\DID\Evaluator\EvaluatorInterface
+   * @var \Ock\DID\Evaluator\EvaluatorInterface
    */
   private EvaluatorInterface $evaluator;
 
   /**
    * Constructor.
    *
-   * @param array<string, \Donquixote\DID\ValueDefinition\ValueDefinitionInterface> $definitions
+   * @param array<string, \Ock\DID\ValueDefinition\ValueDefinitionInterface> $definitions
    */
   public function __construct(
     private array $definitions,
@@ -41,7 +41,7 @@ class Container_ValueDefinitons implements ContainerInterface {
   }
 
   /**
-   * @param \Donquixote\DID\Evaluator\EvaluatorInterface $evaluator
+   * @param \Ock\DID\Evaluator\EvaluatorInterface $evaluator
    *
    * @return static
    */
@@ -53,7 +53,7 @@ class Container_ValueDefinitons implements ContainerInterface {
   }
 
   /**
-   * @param \Donquixote\DID\Evaluator\EvaluatorInterface $evaluator
+   * @param \Ock\DID\Evaluator\EvaluatorInterface $evaluator
    *
    * @return static
    */
@@ -72,7 +72,7 @@ class Container_ValueDefinitons implements ContainerInterface {
    *
    * @return T|mixed
    *
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
@@ -83,7 +83,7 @@ class Container_ValueDefinitons implements ContainerInterface {
    * @param string $id
    *
    * @return never
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   private function fail(string $id): never {
     throw new ContainerToValueException(sprintf(
@@ -97,7 +97,7 @@ class Container_ValueDefinitons implements ContainerInterface {
    *
    * @return mixed
    *
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    *
    * @todo Make this pluggable.
    */

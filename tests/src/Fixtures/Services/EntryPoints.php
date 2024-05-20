@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Tests\Fixtures\Services;
+namespace Ock\DID\Tests\Fixtures\Services;
 
-use Donquixote\ClassDiscovery\Discovery\FactoryDiscovery;
-use Donquixote\ClassDiscovery\ReflectionClassesIA\ReflectionClassesIA;
-use Donquixote\DID\Inspector\FactoryInspector_ServiceDefinition;
-use Donquixote\DID\ServiceDefinitionList\ServiceDefinitionList_Discovery;
-use Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
+use Ock\ClassDiscovery\Discovery\FactoryDiscovery;
+use Ock\ClassDiscovery\ReflectionClassesIA\ReflectionClassesIA;
+use Ock\DID\Inspector\FactoryInspector_ServiceDefinition;
+use Ock\DID\ServiceDefinitionList\ServiceDefinitionList_Discovery;
+use Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
 
 class EntryPoints {
 

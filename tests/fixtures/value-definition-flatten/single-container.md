@@ -3,7 +3,7 @@
 Value definition:
 
 ```php
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
 
 return new ValueDefinition_GetContainer(); 
 ```
@@ -17,7 +17,7 @@ return $container;
 Flattened definition generated code:
 
 ```php
-use Donquixote\DID\FlatService;
+use Ock\DID\FlatService;
 
 return FlatService::get($container);
 ```

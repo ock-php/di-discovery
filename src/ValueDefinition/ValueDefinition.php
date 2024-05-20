@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\ValueDefinition;
+namespace Ock\DID\ValueDefinition;
 
-use Donquixote\ClassDiscovery\Reflection\FactoryReflectionInterface;
-use Donquixote\ClassDiscovery\Reflection\MethodReflection;
+use Ock\ClassDiscovery\Reflection\FactoryReflectionInterface;
+use Ock\ClassDiscovery\Reflection\MethodReflection;
 
 /**
  * Static factories for ValueDefinitionInterface objects.
@@ -13,10 +13,10 @@ use Donquixote\ClassDiscovery\Reflection\MethodReflection;
 class ValueDefinition {
 
   /**
-   * @param \Donquixote\ClassDiscovery\Reflection\FactoryReflectionInterface $reflector
+   * @param \Ock\ClassDiscovery\Reflection\FactoryReflectionInterface $reflector
    * @param array $args
    *
-   * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface
+   * @return \Ock\DID\ValueDefinition\ValueDefinitionInterface
    */
   public static function fromReflector(FactoryReflectionInterface $reflector, array $args): ValueDefinitionInterface {
     if ($reflector instanceof MethodReflection) {

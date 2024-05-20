@@ -19,12 +19,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Donquixote\\DID\\": "src"
+            "Ock\\DID\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Donquixote\\DID\\Tests\\": "tests/src"
+            "Ock\\DID\\Tests\\": "tests/src"
         }
     },
     "config": {

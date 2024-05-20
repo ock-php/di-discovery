@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
-use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
+use Ock\ClassDiscovery\Util\ReflectionTypeUtil;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\Helpers\Util\MessageUtil;
 
 /**
  * Marks a parameter to expect a service from the container.
@@ -33,9 +33,9 @@ class GetService implements GetServiceInterface {
   /**
    * @param \ReflectionParameter $parameter
    *
-   * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface
+   * @return \Ock\DID\ValueDefinition\ValueDefinitionInterface
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public function getArgumentDefinition(\ReflectionParameter $parameter): ValueDefinitionInterface {
     $id = $this->id

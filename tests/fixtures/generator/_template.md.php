@@ -11,9 +11,9 @@ declare(strict_types = 1);
  *   TRUE if this example is expected to fail.
  */
 
-use Donquixote\CodegenTools\Util\CodeFormatUtil;
-use Donquixote\CodegenTools\Util\CodeGen;
-use Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp;
+use Ock\CodegenTools\Util\CodeFormatUtil;
+use Ock\CodegenTools\Util\CodeGen;
+use Ock\DID\ValueDefinitionToPhp\ValueDefinitionToPhp;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
 

@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Tests\Util;
+namespace Ock\DID\Tests\Util;
 
-use Donquixote\DID\Evaluator\Evaluator;
-use Donquixote\DID\Evaluator\EvaluatorInterface;
+use Ock\DID\Evaluator\Evaluator;
+use Ock\DID\Evaluator\EvaluatorInterface;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
 

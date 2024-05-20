@@ -3,8 +3,8 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
 
 return new ValueDefinition_Call('strlen', ['hello']); 
 ```

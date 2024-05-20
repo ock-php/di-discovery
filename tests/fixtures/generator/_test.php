@@ -5,15 +5,15 @@
  *   Original php snippet.
  */
 
-use Donquixote\DID\Tests\Util\TestUtil;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\Tests\Util\TestUtil;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
 
 $definition = eval($php);
 $evaluator = TestUtil::createDummyEvaluator();
 $container = $evaluator->evaluate(new ValueDefinition_GetContainer());
-$generator = new \Donquixote\DID\ValueDefinitionToPhp\ValueDefinitionToPhp();
+$generator = new \Ock\DID\ValueDefinitionToPhp\ValueDefinitionToPhp();
 
 $definitionValue = $evaluator->evaluate($definition);
 $definitionExpression = $generator->generate($definition);

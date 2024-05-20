@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Attribute;
+namespace Ock\DID\Attribute;
 
-use Donquixote\ClassDiscovery\Exception\DiscoveryException;
-use Donquixote\ClassDiscovery\Exception\MalformedDeclarationException;
-use Donquixote\ClassDiscovery\Util\ReflectionTypeUtil;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Exception\DiscoveryException;
+use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
+use Ock\ClassDiscovery\Util\ReflectionTypeUtil;
+use Ock\Helpers\Util\MessageUtil;
 
 class ServiceDiscoveryUtil {
 
@@ -16,8 +16,8 @@ class ServiceDiscoveryUtil {
    *
    * @return string
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public static function reflectorGetTypeName(\Reflector $reflector): string {
     if ($reflector instanceof \ReflectionClass) {
@@ -42,8 +42,8 @@ class ServiceDiscoveryUtil {
    *
    * @return string
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
-   * @throws \Donquixote\ClassDiscovery\Exception\MalformedDeclarationException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
   public static function functionGetTypeName(\ReflectionFunctionAbstract $reflectionFunction): string {
     $returnClass = ReflectionTypeUtil::requireGetClassLikeType($reflectionFunction);
@@ -63,7 +63,7 @@ class ServiceDiscoveryUtil {
    * @param \ReflectionClass $reflectionClass
    *
    * @return string
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   public static function classGetTypeName(\ReflectionClass $reflectionClass): string {
     if ($reflectionClass->isInterface()) {

@@ -2,19 +2,19 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ServiceDefinitionList;
+namespace Ock\DID\ServiceDefinitionList;
 
-use Donquixote\ClassDiscovery\Discovery\DiscoveryInterface;
+use Ock\ClassDiscovery\Discovery\DiscoveryInterface;
 
 /**
- * @template-implements \Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface<false>
+ * @template-implements \Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface<false>
  */
 class ServiceDefinitionList_Discovery implements ServiceDefinitionListInterface {
 
   /**
    * Constructor.
    *
-   * @param \Donquixote\ClassDiscovery\Discovery\DiscoveryInterface<\Donquixote\DID\ServiceDefinition\ServiceDefinition> $discovery
+   * @param \Ock\ClassDiscovery\Discovery\DiscoveryInterface<\Ock\DID\ServiceDefinition\ServiceDefinition> $discovery
    */
   public function __construct(
     private readonly DiscoveryInterface $discovery,

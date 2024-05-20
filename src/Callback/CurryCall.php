@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Callback;
+namespace Ock\DID\Callback;
 
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\EggInterface;
 

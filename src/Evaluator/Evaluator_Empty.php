@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Evaluator;
+namespace Ock\DID\Evaluator;
 
-use Donquixote\CodegenTools\Exception\EvaluationException;
+use Ock\CodegenTools\Exception\EvaluationException;
 use Psr\Container\ContainerInterface;
 
 class Evaluator_Empty implements EvaluatorInterface {

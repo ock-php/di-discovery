@@ -2,20 +2,20 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ValueDefinitionToPhp;
+namespace Ock\DID\ValueDefinitionToPhp;
 
-use Donquixote\CodegenTools\Exception\CodegenException;
-use Donquixote\CodegenTools\Util\CodeGen;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_ClassName;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetArgument;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\CodegenTools\Exception\CodegenException;
+use Ock\CodegenTools\Util\CodeGen;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_ClassName;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetArgument;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\Helpers\Util\MessageUtil;
 
 class ValueDefinitionToPhp implements ValueDefinitionToPhpInterface {
 
@@ -105,7 +105,7 @@ class ValueDefinitionToPhp implements ValueDefinitionToPhpInterface {
    *   Definition for a callable value.
    *
    * @return string
-   * @throws \Donquixote\CodegenTools\Exception\CodegenException
+   * @throws \Ock\CodegenTools\Exception\CodegenException
    */
   private function generateCallFqn(mixed $definition): string {
     if (is_string($definition)) {

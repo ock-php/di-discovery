@@ -3,7 +3,7 @@
 Value definition:
 
 ```php
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
 
 return new ValueDefinition_Construct(\stdClass::class); 
 ```

@@ -3,11 +3,11 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
 
 return new ValueDefinition_Construct(C::class, [
   new ValueDefinition_GetService('example_service'),
@@ -41,7 +41,7 @@ return new ValueDefinition_Construct(C::class, [
 Generated code:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
+use Ock\DID\Tests\Fixtures\C;
 
 return new C(
   $container->get('example_service'),
@@ -55,10 +55,10 @@ return new C(
 Flattened definition generated code:
 
 ```php
-use Donquixote\DID\FlatService;
+use Ock\DID\FlatService;
 
 return FlatService::construct(
-  'Donquixote\\DID\\Tests\\Fixtures\\C',
+  'Ock\\DID\\Tests\\Fixtures\\C',
   5,
   $container->get('example_service'),
   ['op' => 'call', 'callback' => 5, 'args' => [6]],
@@ -72,7 +72,7 @@ return FlatService::construct(
   ['op' => 'array', 'array' => [16, 17]],
   ['op' => 'array', 'array' => [18, 19]],
   7,
-  'Donquixote\\DID\\Tests\\Fixtures\\C',
+  'Ock\\DID\\Tests\\Fixtures\\C',
   'create',
   ['op' => 'construct', 'class' => 20, 'args' => []],
   'foo',
@@ -80,6 +80,6 @@ return FlatService::construct(
   'foo',
   $container->get('service_with_method'),
   'theMethod',
-  'Donquixote\\DID\\Tests\\Fixtures\\C',
+  'Ock\\DID\\Tests\\Fixtures\\C',
 );
 ```

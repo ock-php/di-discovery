@@ -3,10 +3,10 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
 
 return new ValueDefinition_CallObjectMethod(
   new ValueDefinition_GetService('some_service'),
@@ -24,7 +24,7 @@ return $container->get('some_service')->foo();
 Flattened definition generated code:
 
 ```php
-use Donquixote\DID\FlatService;
+use Ock\DID\FlatService;
 
 return FlatService::callDynamic(
   1,

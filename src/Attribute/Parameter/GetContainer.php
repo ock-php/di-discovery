@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 
 /**
  * Marks a parameter to expect a service from the container.

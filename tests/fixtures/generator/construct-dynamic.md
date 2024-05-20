@@ -3,9 +3,9 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
 
 return new ValueDefinition_Construct(
   new ValueDefinition_Call([C::class, 'getClassName']),
@@ -16,7 +16,7 @@ return new ValueDefinition_Construct(
 Generated code:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
+use Ock\DID\Tests\Fixtures\C;
 
 return new (C::getClassName())(5);
 ```

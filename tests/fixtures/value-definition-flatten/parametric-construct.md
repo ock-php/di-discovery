@@ -3,12 +3,12 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetArgument;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetArgument;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
 
 return new ValueDefinition_Parametric(
   new ValueDefinition_Construct(C::class, [
@@ -29,7 +29,7 @@ return new ValueDefinition_Parametric(
 Generated code:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
+use Ock\DID\Tests\Fixtures\C;
 
 return static fn (...$args) => new C(
   5,
@@ -42,11 +42,11 @@ return static fn (...$args) => new C(
 Flattened definition generated code:
 
 ```php
-use Donquixote\DID\FlatService;
+use Ock\DID\FlatService;
 
 return FlatService::parametric(
   ['op' => 'construct', 'class' => 1, 'args' => [2, 3, 4, 5]],
-  'Donquixote\\DID\\Tests\\Fixtures\\C',
+  'Ock\\DID\\Tests\\Fixtures\\C',
   5,
   $container->get('some_service'),
   ['op' => 'arg', 'position' => 0],

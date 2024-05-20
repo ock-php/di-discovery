@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Container;
+namespace Ock\DID\Container;
 
-use Donquixote\DID\Exception\ContainerToValueException;
-use Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
+use Ock\DID\Exception\ContainerToValueException;
+use Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
 use Psr\Container\ContainerInterface;
 
 class Container_ServiceCallbacks implements ContainerInterface {
@@ -25,10 +25,10 @@ class Container_ServiceCallbacks implements ContainerInterface {
   ) {}
 
   /**
-   * @param \Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface $serviceDefinitionList
+   * @param \Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface $serviceDefinitionList
    *
    * @return static
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   public static function fromServiceDefinitionList(ServiceDefinitionListInterface $serviceDefinitionList): self {
     $definitions = [];
@@ -44,7 +44,7 @@ class Container_ServiceCallbacks implements ContainerInterface {
    * @param class-string<T>|string $id
    *
    * @return T|mixed
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
@@ -55,7 +55,7 @@ class Container_ServiceCallbacks implements ContainerInterface {
    * @param string $id
    *
    * @return never
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   private function fail(string $id): never {
     throw new ContainerToValueException(sprintf(

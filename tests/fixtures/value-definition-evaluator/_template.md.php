@@ -11,7 +11,7 @@
 
 declare(strict_types = 1);
 
-use Donquixote\DID\Tests\Util\TestUtil;
+use Ock\DID\Tests\Util\TestUtil;
 
 $definition = eval($php);
 $evaluator = TestUtil::createDummyEvaluator();

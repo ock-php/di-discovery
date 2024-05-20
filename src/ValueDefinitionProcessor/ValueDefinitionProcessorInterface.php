@@ -2,16 +2,16 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ValueDefinitionProcessor;
+namespace Ock\DID\ValueDefinitionProcessor;
 
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 
 interface ValueDefinitionProcessorInterface {
 
   /**
-   * @param \Donquixote\DID\ValueDefinition\ValueDefinitionInterface $definition
+   * @param \Ock\DID\ValueDefinition\ValueDefinitionInterface $definition
    *
-   * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface
+   * @return \Ock\DID\ValueDefinition\ValueDefinitionInterface
    */
   public function process(ValueDefinitionInterface $definition): ValueDefinitionInterface;
 

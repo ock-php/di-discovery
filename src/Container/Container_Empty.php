@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Container;
+namespace Ock\DID\Container;
 
-use Donquixote\DID\Exception\ServiceNotFoundException;
+use Ock\DID\Exception\ServiceNotFoundException;
 use Psr\Container\ContainerInterface;
 
 class Container_Empty implements ContainerInterface {

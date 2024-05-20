@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ValueDefinitionToSymfony;
+namespace Ock\DID\ValueDefinitionToSymfony;
 
 interface ValueDefinitionToSymfonyInterface {
 

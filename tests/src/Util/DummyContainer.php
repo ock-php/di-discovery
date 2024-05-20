@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Tests\Util;
+namespace Ock\DID\Tests\Util;
 
-use Donquixote\DID\Tests\Fixtures\GenericObject;
+use Ock\DID\Tests\Fixtures\GenericObject;
 use Psr\Container\ContainerInterface;
 
 class DummyContainer implements ContainerInterface {

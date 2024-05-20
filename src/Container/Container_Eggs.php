@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Container;
+namespace Ock\DID\Container;
 
-use Donquixote\ClassDiscovery\ClassFilesIA\ClassFilesIA;
-use Donquixote\DID\EggList\EggList_Discovery_ServiceAttribute;
-use Donquixote\DID\Exception\ContainerToValueException;
+use Ock\ClassDiscovery\ClassFilesIA\ClassFilesIA;
+use Ock\DID\EggList\EggList_Discovery_ServiceAttribute;
+use Ock\DID\Exception\ContainerToValueException;
 use Ock\Egg\Egg\Egg_Container;
-use Donquixote\DID\ParamToEgg\ParamToEgg;
+use Ock\DID\ParamToEgg\ParamToEgg;
 use Psr\Container\ContainerInterface;
 
 class Container_Eggs implements ContainerInterface {
@@ -28,10 +28,10 @@ class Container_Eggs implements ContainerInterface {
   ) {}
 
   /**
-   * @param \Donquixote\ClassDiscovery\ClassFilesIA\ClassFilesIAInterface[] $classFilesIAs
+   * @param \Ock\ClassDiscovery\ClassFilesIA\ClassFilesIAInterface[] $classFilesIAs
    *
    * @return \Psr\Container\ContainerInterface
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   public static function fromClassFilesIAs(array $classFilesIAs): ContainerInterface {
     $containerDiscoveryClassFilesIA = ClassFilesIA::multiple($classFilesIAs);
@@ -51,7 +51,7 @@ class Container_Eggs implements ContainerInterface {
    * @param class-string<T>|string $id
    *
    * @return T|mixed
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   public function get(string $id): mixed {
     return $this->cache[$id]
@@ -62,7 +62,7 @@ class Container_Eggs implements ContainerInterface {
    * @param string $id
    *
    * @return never
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   private function fail(string $id): never {
     throw new ContainerToValueException(sprintf(

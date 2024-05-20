@@ -2,18 +2,18 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ValueDefinitionProcessor;
+namespace Ock\DID\ValueDefinitionProcessor;
 
-use Donquixote\DID\FlatService;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_ClassName;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetArgument;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\FlatService;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_ClassName;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetArgument;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 
 /**
  * Standardizes the value definition as a service definition.
@@ -21,9 +21,9 @@ use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
 class ValueDefinitionProcessor_FlatServiceDefinition implements ValueDefinitionProcessorInterface {
 
   /**
-   * @param \Donquixote\DID\ValueDefinition\ValueDefinitionInterface $definition
+   * @param \Ock\DID\ValueDefinition\ValueDefinitionInterface $definition
    *
-   * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface
+   * @return \Ock\DID\ValueDefinition\ValueDefinitionInterface
    */
   public function process(ValueDefinitionInterface $definition): ValueDefinitionInterface {
     if ($definition instanceof ValueDefinition_GetService) {

@@ -6,16 +6,16 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
 interface ServiceArgumentAttributeInterface {
 
   /**
    * @param \ReflectionParameter $parameter
    *
-   * @return \Donquixote\DID\ValueDefinition\ValueDefinitionInterface|mixed
+   * @return \Ock\DID\ValueDefinition\ValueDefinitionInterface|mixed
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   public function getArgumentDefinition(\ReflectionParameter $parameter): mixed;
 

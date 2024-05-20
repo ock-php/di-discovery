@@ -2,19 +2,19 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\Evaluator;
+namespace Ock\DID\Evaluator;
 
-use Donquixote\DID\Container\Container_Empty;
-use Donquixote\DID\Exception\ContainerToValueException;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
-use Donquixote\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
-use Donquixote\DID\ValueDefinition\ValueDefinition_ClassName;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Construct;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetArgument;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetContainer;
-use Donquixote\DID\ValueDefinition\ValueDefinition_GetService;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Parametric;
-use Donquixote\DID\ValueDefinition\ValueDefinitionInterface;
+use Ock\DID\Container\Container_Empty;
+use Ock\DID\Exception\ContainerToValueException;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\ValueDefinition\ValueDefinition_CallObjectMethod;
+use Ock\DID\ValueDefinition\ValueDefinition_ClassName;
+use Ock\DID\ValueDefinition\ValueDefinition_Construct;
+use Ock\DID\ValueDefinition\ValueDefinition_GetArgument;
+use Ock\DID\ValueDefinition\ValueDefinition_GetContainer;
+use Ock\DID\ValueDefinition\ValueDefinition_GetService;
+use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
+use Ock\DID\ValueDefinition\ValueDefinitionInterface;
 use Psr\Container\ContainerInterface;
 
 class Evaluator implements EvaluatorInterface {
@@ -106,7 +106,7 @@ class Evaluator implements EvaluatorInterface {
   /**
    * @param array $args
    *
-   * @return \Donquixote\DID\Evaluator\Evaluator
+   * @return \Ock\DID\Evaluator\Evaluator
    */
   private function withParametricArgs(array $args): Evaluator {
     $clone = clone $this;
@@ -118,7 +118,7 @@ class Evaluator implements EvaluatorInterface {
    * @param string $message
    *
    * @return never
-   * @throws \Donquixote\DID\Exception\ContainerToValueException
+   * @throws \Ock\DID\Exception\ContainerToValueException
    */
   private function fail(string $message): never {
     throw new ContainerToValueException($message);

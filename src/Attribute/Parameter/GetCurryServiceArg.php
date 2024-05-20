@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
 /**
  * Marks a parameter to expect a service from the container.

@@ -2,18 +2,18 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\EggList;
+namespace Ock\DID\EggList;
 
-use Donquixote\ClassDiscovery\Exception\DiscoveryException;
-use Donquixote\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
-use Donquixote\ClassDiscovery\Util\AttributesUtil;
-use Donquixote\DID\Attribute\Parameter\CallServiceMethodWithArguments;
-use Donquixote\DID\Attribute\Parameter\CallServiceWithArguments;
-use Donquixote\DID\Attribute\Parameter\GetArgument;
-use Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface;
-use Donquixote\DID\Callback\CurryCall;
-use Donquixote\DID\Callback\CurryConstruct;
-use Donquixote\Helpers\Util\MessageUtil;
+use Ock\ClassDiscovery\Exception\DiscoveryException;
+use Ock\ClassDiscovery\Shared\ReflectionClassesIAHavingBase;
+use Ock\ClassDiscovery\Util\AttributesUtil;
+use Ock\DID\Attribute\Parameter\CallServiceMethodWithArguments;
+use Ock\DID\Attribute\Parameter\CallServiceWithArguments;
+use Ock\DID\Attribute\Parameter\GetArgument;
+use Ock\DID\Attribute\ServiceDefinitionAttributeInterface;
+use Ock\DID\Callback\CurryCall;
+use Ock\DID\Callback\CurryConstruct;
+use Ock\Helpers\Util\MessageUtil;
 use Ock\Egg\Egg\Egg_CallableCall;
 use Ock\Egg\Egg\Egg_Construct;
 use Ock\Egg\Egg\Egg_ServiceId;
@@ -38,7 +38,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
     $eggs = [];
     /** @var \ReflectionClass $reflectionClass */
     foreach ($this->itReflectionClasses() as $reflectionClass) {
-      /** @var \Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface[] $serviceAttributes */
+      /** @var \Ock\DID\Attribute\ServiceDefinitionAttributeInterface[] $serviceAttributes */
       $serviceAttributes = AttributesUtil::getAll($reflectionClass, ServiceDefinitionAttributeInterface::class);
       if ($serviceAttributes) {
         foreach ($serviceAttributes as $serviceAttribute) {
@@ -51,7 +51,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
         }
       }
       foreach ($reflectionClass->getMethods() as $reflectionMethod) {
-        /** @var \Donquixote\DID\Attribute\ServiceDefinitionAttributeInterface[] $serviceAttributes */
+        /** @var \Ock\DID\Attribute\ServiceDefinitionAttributeInterface[] $serviceAttributes */
         $serviceAttributes = AttributesUtil::getAll($reflectionMethod, ServiceDefinitionAttributeInterface::class);
         if ($serviceAttributes) {
           foreach ($serviceAttributes as $serviceAttribute) {
@@ -74,7 +74,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param bool $isCallableService
    *
    * @return \Ock\Egg\Egg\EggInterface
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function onClass(\ReflectionClass $reflectionClass, bool $isCallableService): EggInterface {
     if (!$reflectionClass->isInstantiable()) {
@@ -106,7 +106,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    * @param bool $isCallableService
    *
    * @return \Ock\Egg\Egg\EggInterface
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function onMethod(\ReflectionClass $reflectionClass, \ReflectionMethod $reflectionMethod, bool $isCallableService): EggInterface {
     if (!$reflectionMethod->isStatic()) {
@@ -137,7 +137,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    *
    * @return list<\Ock\Egg\Egg\EggInterface>
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildArgEggs(array $parameters): array {
     $argEggs = [];
@@ -161,7 +161,7 @@ class EggList_Discovery_ServiceAttribute extends ReflectionClassesIAHavingBase i
    *
    * @return list<\Ock\Egg\Egg\EggInterface|null>
    *
-   * @throws \Donquixote\ClassDiscovery\Exception\DiscoveryException
+   * @throws \Ock\ClassDiscovery\Exception\DiscoveryException
    */
   private function buildCallableArgEggs(array $parameters, ?array &$curryArgsMap, ?array &$callableArgEggs): array {
     $argEggs = [];

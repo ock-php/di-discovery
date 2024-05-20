@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Donquixote\DID\ServiceDefinitionList;
+namespace Ock\DID\ServiceDefinitionList;
 
 /**
  * Decorator that buffers the result, to avoid repeated discovery.
@@ -11,7 +11,7 @@ namespace Donquixote\DID\ServiceDefinitionList;
  *
  * @template KeyedById as bool
  *
- * @template-extends \Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface<KeyedById>
+ * @template-extends \Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface<KeyedById>
  */
 class ServiceDefinitionList_Buffer implements ServiceDefinitionListInterface {
 
@@ -20,7 +20,7 @@ class ServiceDefinitionList_Buffer implements ServiceDefinitionListInterface {
   /**
    * Constructor.
    *
-   * @param \Donquixote\DID\ServiceDefinitionList\ServiceDefinitionListInterface<KeyedById> $decorated
+   * @param \Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface<KeyedById> $decorated
    */
   public function __construct(
     private readonly ServiceDefinitionListInterface $decorated,

@@ -3,8 +3,8 @@
 Value definition:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
-use Donquixote\DID\ValueDefinition\ValueDefinition_Call;
+use Ock\DID\Tests\Fixtures\C;
+use Ock\DID\ValueDefinition\ValueDefinition_Call;
 
 return new ValueDefinition_Call([
   new ValueDefinition_Call([C::class, 'getClassName']),
@@ -15,7 +15,7 @@ return new ValueDefinition_Call([
 Generated code:
 
 ```php
-use Donquixote\DID\Tests\Fixtures\C;
+use Ock\DID\Tests\Fixtures\C;
 
 return [C::getClassName(), C::getMethodName()]();
 ```

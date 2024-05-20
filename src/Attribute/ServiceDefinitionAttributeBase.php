@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute;
+namespace Ock\DID\Attribute;
 
 /**
  * Marks a class or method as a service.

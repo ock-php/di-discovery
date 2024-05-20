@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Donquixote\DID\Attribute\Parameter;
+namespace Ock\DID\Attribute\Parameter;
 
 use Ock\Egg\Egg\EggInterface;
 
