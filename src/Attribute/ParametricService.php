@@ -9,8 +9,6 @@ namespace Ock\DID\Attribute;
  * The actual service object in the DI container will be just a callback, but
  * the return value of that callback will be an instance of the class, or a
  * return value of the method that was marked.
- *
- * @see \Ock\DID\EggList\EggList_Discovery_ParameterizedServiceAttribute
  */
 #[\Attribute(\Attribute::TARGET_METHOD|\Attribute::TARGET_CLASS|\Attribute::IS_REPEATABLE)]
 final class ParametricService extends ServiceDefinitionAttributeBase {
