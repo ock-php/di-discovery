@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Ock\DID\Symfony;
 
-use Ock\ClassDiscovery\Discovery\DiscoveryInterface;
-use Ock\ClassDiscovery\Discovery\FactoryDiscovery;
+use Ock\ClassDiscovery\FactsIA\FactsIAInterface;
+use Ock\ClassDiscovery\FactsIA\FactsIA_InspectFactories;
 use Ock\ClassDiscovery\Inspector\FactoryInspector_Concat;
 use Ock\ClassDiscovery\Inspector\FactoryInspectorInterface;
 use Ock\ClassDiscovery\Reflection\ClassReflection;
@@ -41,7 +41,7 @@ class DiscoveryPass implements CompilerPassInterface {
     }
   }
 
-  protected function buildFactsIA(ContainerBuilder $container): DiscoveryInterface {
+  protected function buildFactsIA(ContainerBuilder $container): FactsIAInterface {
     $objects = [];
     $decoratorClasses = [];
     // @todo Search only specific namespaces.
@@ -92,7 +92,7 @@ class DiscoveryPass implements CompilerPassInterface {
     foreach ($decoratorClasses[FactoryInspectorInterface::class] ?? [] as $decoratorClass) {
       $inspector = new $decoratorClass($inspector);
     }
-    return new FactoryDiscovery($classes, $inspector);
+    return new FactsIA_InspectFactories($classes, $inspector);
   }
 
   protected function resolveParameters(array $parameters, ContainerBuilder $container): array {
