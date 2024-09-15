@@ -4,9 +4,9 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "php": ">=8.2",
-        "ock/class-discovery": "@dev",
-        "ock/codegen-tools": "@dev",
-        "ock/helpers": "@dev",
+        "ock/class-discovery": "self.version",
+        "ock/codegen-tools": "self.version",
+        "ock/helpers": "self.version",
         "psr/container": "^2.0",
         "psr/log": "^1.1.4|^2.0|^3.0"
     },
