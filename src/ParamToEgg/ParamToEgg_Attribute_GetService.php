@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Ock\DID\ParamToEgg;
 
 use Ock\ClassDiscovery\Util\AttributesUtil;
+use Ock\DependencyInjection\Attribute\ServiceTag;
 use Ock\DID\Attribute\Parameter\GetServiceInterface;
 use Ock\Egg\Egg\Egg_ServiceId;
 use Ock\Egg\Egg\EggInterface;
@@ -13,6 +14,7 @@ use Ock\Egg\ParamToEgg\ParamToEggInterface;
 use Ock\Helpers\Util\MessageUtil;
 use Psr\Container\ContainerInterface;
 
+#[ServiceTag(self::SERVICE_TAG)]
 class ParamToEgg_Attribute_GetService implements ParamToEggInterface {
 
   public function __construct(
