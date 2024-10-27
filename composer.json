@@ -3,7 +3,7 @@
     "description": "Dependency injection discovery (DID)",
     "license": "GPL-2.0-or-later",
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ock/class-discovery": "self.version",
         "ock/codegen-tools": "self.version",
         "ock/helpers": "self.version",
