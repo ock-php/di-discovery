@@ -52,7 +52,7 @@ trait RecordedTestTrait {
    * {@inheritdoc}
    */
   public function runTest(): mixed {
-    $this->originalName = $this->getName(false);
+    $this->originalName = $this->name();
     $this->setName('doRunTest');
     return parent::runTest();
   }
@@ -117,7 +117,7 @@ trait RecordedTestTrait {
     if (\str_starts_with($name, $tns)) {
       $name = \substr($name, \strlen($tns));
     }
-    $name .= '-' . $this->getName(false);
+    $name .= '-' . $this->name();
     $dataName = $this->dataName() ?? '';
     if ($dataName !== '') {
       $name .= '-' . $dataName;
