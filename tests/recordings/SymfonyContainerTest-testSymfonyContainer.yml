@@ -1,7 +1,0 @@
--
-  test: 'Ock\DID\Tests\SymfonyContainerTest::testSymfonyContainer()'
--
-  'public services':
-    service_container:
-      definition.class: Symfony\Component\DependencyInjection\ContainerInterface
-      instance.class: Symfony\Component\DependencyInjection\ContainerBuilder
