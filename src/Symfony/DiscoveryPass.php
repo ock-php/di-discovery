@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Ock\DID\Symfony;
 
-use Ock\ClassDiscovery\FactsIA\FactsIAInterface;
 use Ock\ClassDiscovery\FactsIA\FactsIA_InspectFactories;
+use Ock\ClassDiscovery\FactsIA\FactsIAInterface;
 use Ock\ClassDiscovery\Inspector\FactoryInspector_Concat;
 use Ock\ClassDiscovery\Inspector\FactoryInspectorInterface;
 use Ock\ClassDiscovery\Reflection\ClassReflection;
