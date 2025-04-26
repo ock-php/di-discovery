@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Ock\DID\Tests;
 
-use Ock\ClassDiscovery\NamespaceDirectory;
+use Ock\ClassFilesIterator\NamespaceDirectory;
 use Symfony\Component\Yaml\Yaml;
 
 /**
