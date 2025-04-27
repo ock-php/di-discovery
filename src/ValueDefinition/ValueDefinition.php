@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Ock\DID\ValueDefinition;
 
-use Ock\ClassDiscovery\Reflection\FactoryReflectionInterface;
-use Ock\ClassDiscovery\Reflection\MethodReflection;
+use Ock\Reflection\FactoryReflectionInterface;
+use Ock\Reflection\MethodReflection;
 
 /**
  * Static factories for ValueDefinitionInterface objects.
@@ -13,7 +13,7 @@ use Ock\ClassDiscovery\Reflection\MethodReflection;
 class ValueDefinition {
 
   /**
-   * @param \Ock\ClassDiscovery\Reflection\FactoryReflectionInterface $reflector
+   * @param \Ock\Reflection\FactoryReflectionInterface $reflector
    * @param array $args
    *
    * @return \Ock\DID\ValueDefinition\ValueDefinitionInterface

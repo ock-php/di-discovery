@@ -8,7 +8,7 @@ use Ock\ClassDiscovery\FactsIA\FactsIA_InspectFactories;
 use Ock\ClassDiscovery\FactsIA\FactsIAInterface;
 use Ock\ClassDiscovery\Inspector\FactoryInspector_Concat;
 use Ock\ClassDiscovery\Inspector\FactoryInspectorInterface;
-use Ock\ClassDiscovery\Reflection\ClassReflection;
+use Ock\Reflection\ClassReflection;
 use Ock\ClassDiscovery\ReflectionClassesIA\ReflectionClassesIA_Concat;
 use Ock\ClassDiscovery\ReflectionClassesIA\ReflectionClassesIAInterface;
 use Ock\DID\Attribute\ServicesDiscovery;
