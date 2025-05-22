@@ -6,9 +6,9 @@ namespace Ock\DID\Inspector;
 
 use Ock\ClassDiscovery\Exception\DiscoveryException;
 use Ock\ClassDiscovery\Inspector\FactoryInspectorInterface;
-use Ock\Reflection\FactoryReflectionInterface;
 use Ock\DID\Attribute\Service;
 use Ock\DID\Attribute\ServicesDiscovery;
+use Ock\Reflection\FactoryReflectionInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 

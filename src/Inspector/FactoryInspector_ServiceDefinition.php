@@ -7,8 +7,6 @@ namespace Ock\DID\Inspector;
 use Ock\ClassDiscovery\Exception\DiscoveryException;
 use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
 use Ock\ClassDiscovery\Inspector\FactoryInspectorInterface;
-use Ock\Reflection\FactoryReflectionInterface;
-use Ock\Reflection\MethodReflection;
 use Ock\ClassDiscovery\Util\AttributesUtil;
 use Ock\DID\Attribute\Parameter\ServiceArgumentAttributeInterface;
 use Ock\DID\Attribute\ServiceDefinitionAttributeBase;
@@ -17,6 +15,8 @@ use Ock\DID\ServiceDefinition\ServiceDefinition;
 use Ock\DID\ValueDefinition\ValueDefinition;
 use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
 use Ock\Helpers\Util\MessageUtil;
+use Ock\Reflection\FactoryReflectionInterface;
+use Ock\Reflection\MethodReflection;
 
 /**
  * @template-implements FactoryInspectorInterface<\Ock\DID\ServiceDefinition\ServiceDefinition>
