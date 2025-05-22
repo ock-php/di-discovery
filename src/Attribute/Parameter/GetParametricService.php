@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace Ock\DID\Attribute\Parameter;
 
-use Ock\ClassDiscovery\Attribute\ReflectorAwareAttributeInterface;
 use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
 use Ock\ClassDiscovery\Util\ReflectionTypeUtil;
 use Ock\Helpers\Util\MessageUtil;
+use Ock\ReflectorAwareAttributes\ReflectorAwareAttributeInterface;
 
 /**
  * Treats the service as a callable.

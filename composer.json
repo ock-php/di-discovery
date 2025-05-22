@@ -7,6 +7,7 @@
         "ock/class-discovery": "self.version",
         "ock/codegen-tools": "self.version",
         "ock/helpers": "self.version",
+        "ock/reflector-aware-attributes": "self.version",
         "psr/container": "^2.0",
         "psr/log": "^1.1.4|^2.0|^3.0"
     },
