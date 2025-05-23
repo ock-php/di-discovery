@@ -17,6 +17,7 @@ use Ock\DID\ValueDefinition\ValueDefinition_Parametric;
 use Ock\Helpers\Util\MessageUtil;
 use Ock\Reflection\FactoryReflectionInterface;
 use Ock\Reflection\MethodReflection;
+use function Ock\ReflectorAwareAttributes\get_attributes;
 
 /**
  * @template-implements FactoryInspectorInterface<\Ock\DID\ServiceDefinition\ServiceDefinition>
@@ -27,7 +28,7 @@ class FactoryInspector_ServiceDefinition implements FactoryInspectorInterface {
    * {@inheritdoc}
    */
   public function findInFactory(FactoryReflectionInterface $reflector): \Iterator {
-    $attributes = AttributesUtil::getAll($reflector->reveal(), ServiceDefinitionAttributeBase::class);
+    $attributes = get_attributes($reflector->reveal(), ServiceDefinitionAttributeBase::class);
     foreach ($attributes as $attribute) {
       if (!$reflector->isCallable()) {
         throw new DiscoveryException(sprintf(
