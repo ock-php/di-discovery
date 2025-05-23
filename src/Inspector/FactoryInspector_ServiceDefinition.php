@@ -27,7 +27,7 @@ class FactoryInspector_ServiceDefinition implements FactoryInspectorInterface {
    * {@inheritdoc}
    */
   public function findInFactory(FactoryReflectionInterface $reflector): \Iterator {
-    $attributes = AttributesUtil::getAll($reflector, ServiceDefinitionAttributeBase::class);
+    $attributes = AttributesUtil::getAll($reflector->reveal(), ServiceDefinitionAttributeBase::class);
     foreach ($attributes as $attribute) {
       if (!$reflector->isCallable()) {
         throw new DiscoveryException(sprintf(
