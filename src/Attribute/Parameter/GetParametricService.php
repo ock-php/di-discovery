@@ -7,13 +7,15 @@ namespace Ock\DID\Attribute\Parameter;
 use Ock\ClassDiscovery\Exception\MalformedDeclarationException;
 use Ock\ClassDiscovery\Util\ReflectionTypeUtil;
 use Ock\Helpers\Util\MessageUtil;
-use Ock\ReflectorAwareAttributes\ReflectorAwareAttributeInterface;
+use Ock\ReflectorAwareAttributes\AttributeConstructor;
 
 /**
  * Treats the service as a callable.
  */
 #[\Attribute(\Attribute::TARGET_PARAMETER|\Attribute::TARGET_PROPERTY)]
-class GetParametricService implements ReflectorAwareAttributeInterface {
+class GetParametricService {
+
+  private readonly ?string $virtualServiceId;
 
   /**
    * Constructor.
@@ -25,9 +27,12 @@ class GetParametricService implements ReflectorAwareAttributeInterface {
    *   Fixed argument values.
    */
   public function __construct(
-    private ?string $virtualServiceId = NULL,
+    ?string $virtualServiceId = NULL,
     public readonly array $args = [],
-  ) {}
+  ) {
+    $this->virtualServiceId = $virtualServiceId
+      ?? self::guessVirtualServiceId();
+  }
 
   /**
    * @param \ReflectionParameter $parameter
@@ -60,14 +65,12 @@ class GetParametricService implements ReflectorAwareAttributeInterface {
   }
 
   /**
-   * @param \Reflector $reflector
+   * @return class-string
    *
    * @throws \Ock\ClassDiscovery\Exception\MalformedDeclarationException
    */
-  public function setReflector(\Reflector $reflector): void {
-    if ($this->virtualServiceId !== NULL) {
-      return;
-    }
+  private static function guessVirtualServiceId(): string {
+    $reflector = AttributeConstructor::getReflector();
     if (!$reflector instanceof \ReflectionParameter) {
       throw new \InvalidArgumentException(sprintf(
         'Unexpected reflector type %s.',
@@ -81,7 +84,7 @@ class GetParametricService implements ReflectorAwareAttributeInterface {
         MessageUtil::formatReflector($reflector),
       ));
     }
-    $this->virtualServiceId = $type;
+    return $type;
   }
 
 }
