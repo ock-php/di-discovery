@@ -76,7 +76,7 @@ class FactoryInspector_ServiceDefinition implements FactoryInspectorInterface {
   }
 
   /**
-   * @param array $parameters
+   * @param array<\Ock\Reflection\ParameterReflection> $parameters
    *
    * @return array
    *
