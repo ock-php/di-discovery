@@ -13,7 +13,7 @@ use Ock\DID\ServiceDefinitionList\ServiceDefinitionListInterface;
 class EntryPoints {
 
   public static function getServiceDefinitionList(): ServiceDefinitionListInterface {
-    $classes = ReflectionClassesIA::psr4FromKnownClass(self::class);
+    $classes = ReflectionClassesIA::psr4FromClass(self::class);
     $inspector = new FactoryInspector_ServiceDefinition();
     $discovery = new FactsIA_InspectFactories($classes, $inspector);
     return new ServiceDefinitionList_Discovery($discovery);
