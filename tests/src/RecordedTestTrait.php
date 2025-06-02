@@ -110,7 +110,7 @@ trait RecordedTestTrait {
   }
 
   protected function getRecordingFile(): string {
-    $nsdir = NamespaceDirectory::fromKnownClass(static::class)
+    $nsdir = NamespaceDirectory::fromClass(static::class)
       ->package(3);
     $tns = $nsdir->getTerminatedNamespace();
     $name = static::class;
